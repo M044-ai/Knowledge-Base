@@ -1,0 +1,269 @@
+{
+  "schema_version": "2.1",
+  "role": "source_of_truth_for_claude_assembly",
+  "rules": {
+    "single_json_only": true,
+    "blocks_are_content_truth": true,
+    "mappings_are_selection_truth": true,
+    "no_external_knowledge": true,
+    "no_new_blocks": true,
+    "only_fill_pages_content": true,
+    "preserve_block_order": true,
+    "micro_fluency_allowed": true
+  },
+  "concepts": [
+    { "id": "architecture_web", "label": "Architecture d'une application web", "parent_id": null, "children_ids": ["javascript", "typescript", "backend", "api_rest", "json", "postgresql", "cloud", "aws"] },
+    { "id": "javascript", "label": "JavaScript", "parent_id": "architecture_web", "children_ids": ["typescript"] },
+    { "id": "typescript", "label": "TypeScript", "parent_id": "javascript", "children_ids": [] },
+    { "id": "backend", "label": "Backend", "parent_id": "architecture_web", "children_ids": ["api_rest", "postgresql"] },
+    { "id": "api_rest", "label": "API REST", "parent_id": "backend", "children_ids": ["json"] },
+    { "id": "json", "label": "JSON", "parent_id": "api_rest", "children_ids": [] },
+    { "id": "postgresql", "label": "PostgreSQL", "parent_id": "backend", "children_ids": [] },
+    { "id": "cloud", "label": "Cloud", "parent_id": "architecture_web", "children_ids": ["aws"] },
+    { "id": "aws", "label": "AWS", "parent_id": "cloud", "children_ids": [] }
+  ],
+  "modes": [
+    { "id": "decouvrir", "label": "Découvrir" },
+    { "id": "explorer", "label": "Explorer" },
+    { "id": "se_lancer", "label": "Se lancer" }
+  ],
+  "resource_types": ["video", "reading"],
+  "item_types": ["notion", "question", "error", "activity", "resource"],
+  "pages": [
+    { "id": "page_decouvrir_architecture_web", "concept": "architecture_web", "mode": "decouvrir", "title": "Architecture d'une application web", "resource_ids": ["res_architecture_video_modern_web_app"], "item_ids": [], "content": "" },
+    { "id": "page_decouvrir_javascript", "concept": "javascript", "mode": "decouvrir", "title": "Comprendre JavaScript moderne", "resource_ids": ["res_javascript_video_100_seconds", "res_javascript_video_grafikart", "res_javascript_reading_mdn_intro"], "item_ids": [], "content": "" },
+    { "id": "page_decouvrir_typescript", "concept": "typescript", "mode": "decouvrir", "title": "TypeScript", "resource_ids": ["res_typescript_video_100_seconds", "res_typescript_video_intro_fr", "res_typescript_reading_official_5min"], "item_ids": [], "content": "" },
+    { "id": "page_decouvrir_backend", "concept": "backend", "mode": "decouvrir", "title": "Node.js et backend", "resource_ids": ["res_backend_video_node_100_seconds"], "item_ids": [], "content": "" },
+    { "id": "page_decouvrir_api_rest", "concept": "api_rest", "mode": "decouvrir", "title": "API REST", "resource_ids": ["res_api_rest_video_explained", "res_api_rest_reading_restfulapi"], "item_ids": [], "content": "" },
+    { "id": "page_decouvrir_json", "concept": "json", "mode": "decouvrir", "title": "JSON", "resource_ids": [], "item_ids": [], "content": "" },
+    { "id": "page_decouvrir_postgresql", "concept": "postgresql", "mode": "decouvrir", "title": "PostgreSQL", "resource_ids": ["res_postgresql_video_sql_100_seconds", "res_postgresql_video_intro_fr", "res_postgresql_reading_sqlbolt"], "item_ids": [], "content": "" },
+    { "id": "page_decouvrir_cloud", "concept": "cloud", "mode": "decouvrir", "title": "Cloud", "resource_ids": [], "item_ids": [], "content": "" },
+    { "id": "page_decouvrir_aws", "concept": "aws", "mode": "decouvrir", "title": "AWS", "resource_ids": ["res_aws_video_explained", "res_aws_video_100_seconds", "res_aws_reading_what_is_aws"], "item_ids": [], "content": "" },
+
+    { "id": "page_explorer_architecture_web", "concept": "architecture_web", "mode": "explorer", "title": "Explorer l'architecture web", "resource_ids": [], "item_ids": [], "content": "" },
+    { "id": "page_explorer_javascript", "concept": "javascript", "mode": "explorer", "title": "Notions essentielles JavaScript", "resource_ids": [], "item_ids": ["notion_01_javascript_typescript_difference", "notion_03_javascript_async_await", "notion_04_javascript_modules"], "content": "" },
+    { "id": "page_explorer_typescript", "concept": "typescript", "mode": "explorer", "title": "Notions essentielles TypeScript", "resource_ids": [], "item_ids": ["notion_01_javascript_typescript_difference", "notion_02_typescript_typing"], "content": "" },
+    { "id": "page_explorer_backend", "concept": "backend", "mode": "explorer", "title": "Explorer le backend", "resource_ids": [], "item_ids": [], "content": "" },
+    { "id": "page_explorer_api_rest", "concept": "api_rest", "mode": "explorer", "title": "Notions essentielles API REST", "resource_ids": [], "item_ids": ["notion_05_api_rest_definition", "notion_06_api_rest_endpoint"], "content": "" },
+    { "id": "page_explorer_json", "concept": "json", "mode": "explorer", "title": "Notions essentielles JSON", "resource_ids": [], "item_ids": ["notion_07_json_definition"], "content": "" },
+    { "id": "page_explorer_postgresql", "concept": "postgresql", "mode": "explorer", "title": "Notions essentielles PostgreSQL", "resource_ids": [], "item_ids": ["notion_08_postgresql_table", "notion_09_postgresql_relation", "notion_10_postgresql_sql_query"], "content": "" },
+    { "id": "page_explorer_cloud", "concept": "cloud", "mode": "explorer", "title": "Notions essentielles Cloud", "resource_ids": [], "item_ids": ["notion_11_cloud_why"], "content": "" },
+    { "id": "page_explorer_aws", "concept": "aws", "mode": "explorer", "title": "Notions essentielles AWS", "resource_ids": [], "item_ids": ["notion_12_aws_role"], "content": "" },
+
+    { "id": "page_se_lancer_architecture_web", "concept": "architecture_web", "mode": "se_lancer", "title": "Se lancer : vue globale", "resource_ids": [], "item_ids": ["question_20_what_is_deployment", "error_01_frontend_backend_confusion", "error_02_api_database_confusion", "error_05_claims_can_code_without_example", "error_06_does_not_understand_errors", "error_07_copies_ai_code_without_understanding", "error_08_ignores_project_structure", "error_09_does_not_ask_technical_questions", "error_10_thinks_expert_expected"], "content": "" },
+    { "id": "page_se_lancer_javascript", "concept": "javascript", "mode": "se_lancer", "title": "Questions et erreurs JavaScript", "resource_ids": [], "item_ids": ["question_01_javascript_vs_typescript", "question_04_async_await", "question_05_let_const_var", "error_03_typescript_replaces_javascript"], "content": "" },
+    { "id": "page_se_lancer_typescript", "concept": "typescript", "mode": "se_lancer", "title": "Questions et erreurs TypeScript", "resource_ids": [], "item_ids": ["question_01_javascript_vs_typescript", "question_02_why_typescript", "question_03_type_or_interface", "error_03_typescript_replaces_javascript"], "content": "" },
+    { "id": "page_se_lancer_backend", "concept": "backend", "mode": "se_lancer", "title": "Questions et erreurs Backend", "resource_ids": [], "item_ids": ["question_10_what_is_backend", "question_19_what_is_server", "error_01_frontend_backend_confusion"], "content": "" },
+    { "id": "page_se_lancer_api_rest", "concept": "api_rest", "mode": "se_lancer", "title": "Questions et erreurs API REST", "resource_ids": [], "item_ids": ["question_06_what_is_api_rest", "question_07_what_is_endpoint", "question_08_get_vs_post", "question_09_json_role", "error_02_api_database_confusion", "error_04_does_not_understand_http"], "content": "" },
+    { "id": "page_se_lancer_json", "concept": "json", "mode": "se_lancer", "title": "Questions JSON", "resource_ids": [], "item_ids": ["question_09_json_role"], "content": "" },
+    { "id": "page_se_lancer_postgresql", "concept": "postgresql", "mode": "se_lancer", "title": "Questions PostgreSQL", "resource_ids": [], "item_ids": ["question_11_what_is_table", "question_12_primary_key", "question_13_why_index", "question_14_what_is_sql", "question_15_why_postgresql", "question_18_storage_vs_database", "error_02_api_database_confusion"], "content": "" },
+    { "id": "page_se_lancer_cloud", "concept": "cloud", "mode": "se_lancer", "title": "Questions Cloud", "resource_ids": [], "item_ids": ["question_16_why_cloud", "question_18_storage_vs_database", "question_19_what_is_server", "question_20_what_is_deployment"], "content": "" },
+    { "id": "page_se_lancer_aws", "concept": "aws", "mode": "se_lancer", "title": "Questions AWS", "resource_ids": [], "item_ids": ["question_17_what_is_aws_for", "question_20_what_is_deployment"], "content": "" }
+  ],
+  "blocks": [
+    { "id": "blk_arch_001", "concept": "architecture_web", "type": "definition", "text": "Une application web moderne s'appuie sur plusieurs couches qui interagissent entre elles pour fournir un service à l'utilisateur." },
+    { "id": "blk_arch_002", "concept": "architecture_web", "type": "definition", "text": "Le frontend correspond à l'interface utilisée par l'utilisateur, tandis que l'API backend gère la logique et le dialogue avec la base de données." },
+    { "id": "blk_arch_003", "concept": "architecture_web", "type": "definition", "text": "PostgreSQL est utilisé pour stocker les données, et l'infrastructure AWS permet de faire tourner l'ensemble." },
+    { "id": "blk_arch_004", "concept": "architecture_web", "type": "explanation", "text": "La chaîne complète peut se lire ainsi : le navigateur communique avec l'API, l'API lit ou écrit dans PostgreSQL, et l'ensemble est hébergé sur AWS." },
+
+    { "id": "blk_js_001", "concept": "javascript", "type": "definition", "text": "JavaScript est le langage de base du développement web." },
+    { "id": "blk_js_002", "concept": "javascript", "type": "explanation", "text": "Comprendre JavaScript permet ensuite de comprendre TypeScript, qui s'appuie sur lui." },
+    { "id": "blk_js_003", "concept": "javascript", "type": "definition", "text": "Les notions à rencontrer dans cette base sont les variables, les fonctions, les objets, async / await et les modules." },
+
+    { "id": "blk_ts_001", "concept": "typescript", "type": "definition", "text": "TypeScript est une extension de JavaScript qui ajoute un système de typage." },
+    { "id": "blk_ts_002", "concept": "typescript", "type": "explanation", "text": "Le typage permet de détecter certaines erreurs avant l'exécution et de rendre le code plus robuste." },
+    { "id": "blk_ts_003", "concept": "typescript", "type": "definition", "text": "Le code TypeScript est ensuite compilé en JavaScript avant d'être exécuté." },
+
+    { "id": "blk_backend_001", "concept": "backend", "type": "definition", "text": "Le backend est la partie serveur d'une application qui traite les requêtes et applique la logique métier." },
+    { "id": "blk_backend_002", "concept": "backend", "type": "explanation", "text": "Il gère les API et l'accès aux bases de données." },
+    { "id": "blk_backend_003", "concept": "backend", "type": "explanation", "text": "Dans la chaîne décrite ici, le client dialogue avec l'API, puis l'API dialogue avec la base de données." },
+
+    { "id": "blk_api_001", "concept": "api_rest", "type": "definition", "text": "Une API REST est une interface qui permet à des applications de communiquer via des requêtes HTTP." },
+    { "id": "blk_api_002", "concept": "api_rest", "type": "definition", "text": "Elle expose des endpoints qui permettent de lire ou de modifier des données." },
+    { "id": "blk_api_003", "concept": "api_rest", "type": "example", "text": "Des exemples d'endpoints sont GET /users et POST /orders." },
+    { "id": "blk_api_004", "concept": "api_rest", "type": "explanation", "text": "Dans ce contexte, JSON fait partie des notions à comprendre pour suivre les échanges de données." },
+
+    { "id": "blk_json_001", "concept": "json", "type": "definition", "text": "JSON est un format de données simple utilisé pour échanger des informations entre un client et un serveur." },
+    { "id": "blk_json_002", "concept": "json", "type": "explanation", "text": "Dans le cadre d'une API REST, les données transitent souvent au format JSON." },
+
+    { "id": "blk_pg_001", "concept": "postgresql", "type": "definition", "text": "PostgreSQL est une base de données relationnelle utilisée pour stocker des données structurées et effectuer des requêtes SQL." },
+    { "id": "blk_pg_002", "concept": "postgresql", "type": "definition", "text": "Les notions associées dans cette base sont la table, la relation et la requête SQL." },
+    { "id": "blk_pg_003", "concept": "postgresql", "type": "example", "text": "Un exemple de requête SQL est SELECT * FROM users;" },
+
+    { "id": "blk_cloud_001", "concept": "cloud", "type": "definition", "text": "Le cloud permet d'héberger des applications et des bases de données sans gérer directement l'infrastructure physique." },
+    { "id": "blk_cloud_002", "concept": "cloud", "type": "explanation", "text": "Dans cette stack, le cloud correspond à la couche qui fait tourner l'ensemble de l'application." },
+
+    { "id": "blk_aws_001", "concept": "aws", "type": "definition", "text": "AWS est une plateforme cloud qui permet d'héberger des applications, des bases de données et des services." },
+    { "id": "blk_aws_002", "concept": "aws", "type": "explanation", "text": "Parmi les services cités dans cette base figurent EC2 pour les serveurs, S3 pour le stockage, RDS pour une base PostgreSQL et Lambda pour des fonctions serverless." },
+    { "id": "blk_aws_003", "concept": "aws", "type": "explanation", "text": "Dans cette stack, AWS représente l'infrastructure d'hébergement." },
+
+    { "id": "blk_explore_arch_001", "concept": "architecture_web", "type": "definition", "text": "Explorer l'architecture web revient à relier l'interface utilisateur, le backend, la base de données et l'infrastructure cloud." },
+    { "id": "blk_explore_arch_002", "concept": "architecture_web", "type": "explanation", "text": "La compréhension de la chaîne complète aide à situer chaque notion dans le fonctionnement global de l'application." },
+
+    { "id": "blk_explore_js_001", "concept": "javascript", "type": "explanation", "text": "Dans ce mode, JavaScript est abordé à travers la différence avec TypeScript et à travers des notions comme async / await et les modules." },
+    { "id": "blk_explore_js_002", "concept": "javascript", "type": "definition", "text": "L'objectif reste de comprendre les bases de langage qui servent ensuite à lire du code moderne." },
+
+    { "id": "blk_explore_ts_001", "concept": "typescript", "type": "definition", "text": "TypeScript se distingue de JavaScript par l'ajout d'un système de typage." },
+    { "id": "blk_explore_ts_002", "concept": "typescript", "type": "explanation", "text": "Dans ce mode, la notion centrale est le typage, avec les types et les interfaces." },
+
+    { "id": "blk_explore_backend_001", "concept": "backend", "type": "definition", "text": "Explorer le backend consiste à comprendre son rôle dans le traitement des requêtes et l'accès aux données." },
+    { "id": "blk_explore_backend_002", "concept": "backend", "type": "explanation", "text": "Le backend se situe entre le client et la base de données dans la logique de fonctionnement de l'application." },
+
+    { "id": "blk_explore_api_001", "concept": "api_rest", "type": "definition", "text": "Dans ce mode, l'API REST est abordée à travers sa définition et la notion d'endpoint." },
+    { "id": "blk_explore_api_002", "concept": "api_rest", "type": "explanation", "text": "Ces notions servent à comprendre comment des actions sont exposées et appelées dans une application." },
+
+    { "id": "blk_explore_json_001", "concept": "json", "type": "definition", "text": "JSON est la notion à retenir pour le format d'échange de données dans cette stack." },
+
+    { "id": "blk_explore_pg_001", "concept": "postgresql", "type": "definition", "text": "Dans ce mode, PostgreSQL est abordé à travers trois notions : la table, la relation et la requête SQL." },
+    { "id": "blk_explore_pg_002", "concept": "postgresql", "type": "explanation", "text": "Ces notions permettent de comprendre comment les données sont organisées et interrogées." },
+
+    { "id": "blk_explore_cloud_001", "concept": "cloud", "type": "definition", "text": "Le cloud est ici abordé par son rôle d'hébergement et par la raison pour laquelle il est utilisé." },
+
+    { "id": "blk_explore_aws_001", "concept": "aws", "type": "definition", "text": "AWS est ici abordé par son rôle dans une application et par les services qu'il met à disposition." },
+
+    { "id": "blk_sl_arch_001", "concept": "architecture_web", "type": "definition", "text": "Dans le mode Se lancer, l'architecture web sert de vue globale pour relier déploiement, responsabilités techniques et erreurs fréquentes." },
+    { "id": "blk_sl_arch_002", "concept": "architecture_web", "type": "warning", "text": "Plusieurs erreurs classiques portent sur la confusion entre les grandes briques du système ou sur une mauvaise lecture de la structure du projet." },
+
+    { "id": "blk_sl_js_001", "concept": "javascript", "type": "definition", "text": "Les questions JavaScript portent sur la différence avec TypeScript, sur async / await et sur la différence entre let, const et var." },
+    { "id": "blk_sl_js_002", "concept": "javascript", "type": "warning", "text": "Une erreur associée consiste à croire que TypeScript remplace JavaScript." },
+
+    { "id": "blk_sl_ts_001", "concept": "typescript", "type": "definition", "text": "Les questions TypeScript portent sur sa différence avec JavaScript, sur l'intérêt du typage et sur la notion de type ou d'interface." },
+    { "id": "blk_sl_ts_002", "concept": "typescript", "type": "warning", "text": "Une erreur associée consiste à ne pas voir TypeScript comme une extension de JavaScript." },
+
+    { "id": "blk_sl_backend_001", "concept": "backend", "type": "definition", "text": "Les questions backend portent sur son rôle dans l'application et sur la notion de serveur." },
+    { "id": "blk_sl_backend_002", "concept": "backend", "type": "warning", "text": "Une erreur associée consiste à mélanger frontend et backend." },
+
+    { "id": "blk_sl_api_001", "concept": "api_rest", "type": "definition", "text": "Les questions API REST portent sur sa définition, sur les endpoints, sur la différence entre GET et POST, et sur le rôle de JSON dans les échanges." },
+    { "id": "blk_sl_api_002", "concept": "api_rest", "type": "warning", "text": "Les erreurs fréquentes portent sur la confusion entre API et base de données ou sur une mauvaise compréhension de HTTP." },
+
+    { "id": "blk_sl_json_001", "concept": "json", "type": "definition", "text": "Dans ce mode, JSON apparaît surtout à travers son rôle dans une API et dans l'échange d'informations entre client et serveur." },
+
+    { "id": "blk_sl_pg_001", "concept": "postgresql", "type": "definition", "text": "Les questions PostgreSQL portent sur la table, la clé primaire, l'index, SQL, l'intérêt d'utiliser PostgreSQL et la différence entre stockage et base de données." },
+    { "id": "blk_sl_pg_002", "concept": "postgresql", "type": "warning", "text": "Une erreur fréquente consiste à confondre l'API avec la base de données, alors qu'elles n'ont pas le même rôle." },
+
+    { "id": "blk_sl_cloud_001", "concept": "cloud", "type": "definition", "text": "Les questions cloud portent sur la raison d'utiliser le cloud, sur la notion de serveur et sur le déploiement." },
+    { "id": "blk_sl_cloud_002", "concept": "cloud", "type": "explanation", "text": "Le cloud sert ici de cadre pour situer l'hébergement et l'infrastructure de l'application." },
+
+    { "id": "blk_sl_aws_001", "concept": "aws", "type": "definition", "text": "Les questions AWS portent sur son rôle comme plateforme cloud et sur sa place dans le déploiement d'une application." }
+  ],
+  "page_block_mappings": [
+    { "page_id": "page_decouvrir_architecture_web", "block_ids": ["blk_arch_001", "blk_arch_002", "blk_arch_003", "blk_arch_004"] },
+    { "page_id": "page_decouvrir_javascript", "block_ids": ["blk_js_001", "blk_js_002", "blk_js_003"] },
+    { "page_id": "page_decouvrir_typescript", "block_ids": ["blk_ts_001", "blk_ts_002", "blk_ts_003"] },
+    { "page_id": "page_decouvrir_backend", "block_ids": ["blk_backend_001", "blk_backend_002", "blk_backend_003"] },
+    { "page_id": "page_decouvrir_api_rest", "block_ids": ["blk_api_001", "blk_api_002", "blk_api_003", "blk_api_004"] },
+    { "page_id": "page_decouvrir_json", "block_ids": ["blk_json_001", "blk_json_002"] },
+    { "page_id": "page_decouvrir_postgresql", "block_ids": ["blk_pg_001", "blk_pg_002", "blk_pg_003"] },
+    { "page_id": "page_decouvrir_cloud", "block_ids": ["blk_cloud_001", "blk_cloud_002"] },
+    { "page_id": "page_decouvrir_aws", "block_ids": ["blk_aws_001", "blk_aws_002", "blk_aws_003"] },
+
+    { "page_id": "page_explorer_architecture_web", "block_ids": ["blk_explore_arch_001", "blk_explore_arch_002"] },
+    { "page_id": "page_explorer_javascript", "block_ids": ["blk_explore_js_001", "blk_explore_js_002"] },
+    { "page_id": "page_explorer_typescript", "block_ids": ["blk_explore_ts_001", "blk_explore_ts_002"] },
+    { "page_id": "page_explorer_backend", "block_ids": ["blk_explore_backend_001", "blk_explore_backend_002"] },
+    { "page_id": "page_explorer_api_rest", "block_ids": ["blk_explore_api_001", "blk_explore_api_002"] },
+    { "page_id": "page_explorer_json", "block_ids": ["blk_explore_json_001"] },
+    { "page_id": "page_explorer_postgresql", "block_ids": ["blk_explore_pg_001", "blk_explore_pg_002"] },
+    { "page_id": "page_explorer_cloud", "block_ids": ["blk_explore_cloud_001"] },
+    { "page_id": "page_explorer_aws", "block_ids": ["blk_explore_aws_001"] },
+
+    { "page_id": "page_se_lancer_architecture_web", "block_ids": ["blk_sl_arch_001", "blk_sl_arch_002"] },
+    { "page_id": "page_se_lancer_javascript", "block_ids": ["blk_sl_js_001", "blk_sl_js_002"] },
+    { "page_id": "page_se_lancer_typescript", "block_ids": ["blk_sl_ts_001", "blk_sl_ts_002"] },
+    { "page_id": "page_se_lancer_backend", "block_ids": ["blk_sl_backend_001", "blk_sl_backend_002"] },
+    { "page_id": "page_se_lancer_api_rest", "block_ids": ["blk_sl_api_001", "blk_sl_api_002"] },
+    { "page_id": "page_se_lancer_json", "block_ids": ["blk_sl_json_001"] },
+    { "page_id": "page_se_lancer_postgresql", "block_ids": ["blk_sl_pg_001", "blk_sl_pg_002"] },
+    { "page_id": "page_se_lancer_cloud", "block_ids": ["blk_sl_cloud_001", "blk_sl_cloud_002"] },
+    { "page_id": "page_se_lancer_aws", "block_ids": ["blk_sl_aws_001"] }
+  ],
+  "resources": [
+    { "id": "res_architecture_video_modern_web_app", "type": "video", "title": "Comment fonctionne une application web moderne", "url": "https://www.youtube.com/watch?v=QX4nR7ZB5w8", "concept_tags": ["architecture_web"] },
+    { "id": "res_javascript_video_100_seconds", "type": "video", "title": "JavaScript en 100 secondes", "url": "https://www.youtube.com/watch?v=DHjqpvDnNGE", "concept_tags": ["javascript"] },
+    { "id": "res_javascript_video_grafikart", "type": "video", "title": "JavaScript pour débutants – Grafikart (FR)", "url": "https://www.youtube.com/watch?v=ItYyeQj0wIM", "concept_tags": ["javascript"] },
+    { "id": "res_javascript_reading_mdn_intro", "type": "reading", "title": "MDN introduction JavaScript", "url": "https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Introduction", "concept_tags": ["javascript"] },
+    { "id": "res_typescript_video_100_seconds", "type": "video", "title": "TypeScript en 100 secondes", "url": "https://www.youtube.com/watch?v=zQnBQ4tB3ZA", "concept_tags": ["typescript"] },
+    { "id": "res_typescript_video_intro_fr", "type": "video", "title": "Introduction TypeScript (FR)", "url": "https://www.youtube.com/watch?v=X8F0hU7FJx4", "concept_tags": ["typescript"] },
+    { "id": "res_typescript_reading_official_5min", "type": "reading", "title": "TypeScript in 5 minutes", "url": "https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html", "concept_tags": ["typescript"] },
+    { "id": "res_api_rest_video_explained", "type": "video", "title": "REST API expliquée simplement", "url": "https://www.youtube.com/watch?v=-MTSQjw5DrM", "concept_tags": ["api_rest"] },
+    { "id": "res_backend_video_node_100_seconds", "type": "video", "title": "Node.js expliqué en 100 secondes", "url": "https://www.youtube.com/watch?v=TlB_eWDSMt4", "concept_tags": ["backend"] },
+    { "id": "res_api_rest_reading_restfulapi", "type": "reading", "title": "Introduction REST API", "url": "https://restfulapi.net/", "concept_tags": ["api_rest"] },
+    { "id": "res_postgresql_video_sql_100_seconds", "type": "video", "title": "SQL en 100 secondes", "url": "https://www.youtube.com/watch?v=zsjvFFKOm3c", "concept_tags": ["postgresql"] },
+    { "id": "res_postgresql_video_intro_fr", "type": "video", "title": "PostgreSQL introduction (FR)", "url": "https://www.youtube.com/watch?v=qw--VYLpxG4", "concept_tags": ["postgresql"] },
+    { "id": "res_postgresql_reading_sqlbolt", "type": "reading", "title": "Introduction SQL", "url": "https://sqlbolt.com/fr/", "concept_tags": ["postgresql"] },
+    { "id": "res_aws_video_explained", "type": "video", "title": "AWS expliqué simplement", "url": "https://www.youtube.com/watch?v=mxT233EdY5c", "concept_tags": ["aws"] },
+    { "id": "res_aws_video_100_seconds", "type": "video", "title": "AWS en 100 secondes", "url": "https://www.youtube.com/watch?v=H4AwR_xY-Kw", "concept_tags": ["aws"] },
+    { "id": "res_aws_reading_what_is_aws", "type": "reading", "title": "Présentation AWS", "url": "https://aws.amazon.com/fr/what-is-aws/", "concept_tags": ["aws"] },
+    { "id": "res_activity_video_create_api_node_postgres", "type": "video", "title": "Créer une API Node + PostgreSQL", "url": "https://www.youtube.com/watch?v=ldYcgPKEZC8", "concept_tags": ["backend", "api_rest", "postgresql"] },
+    { "id": "res_activity_reading_nodejs", "type": "reading", "title": "Installer Node.js", "url": "https://nodejs.org", "concept_tags": ["backend"] },
+    { "id": "res_activity_reading_postgresql", "type": "reading", "title": "Installer PostgreSQL", "url": "https://www.postgresql.org", "concept_tags": ["postgresql"] }
+  ],
+  "activities": [
+    {
+      "id": "activity_exercice_application_simple_api",
+      "type": "activity",
+      "title": "Exercice d'application : API simple",
+      "description": "Faire un exemple simple d'API TypeScript avec GET /users et POST /users, avec base PostgreSQL.",
+      "concept_tags": ["backend", "api_rest", "postgresql"],
+      "mode_targets": ["decouvrir"],
+      "duration_minutes": null,
+      "resource_ids": ["res_activity_video_create_api_node_postgres"]
+    },
+    {
+      "id": "activity_mini_projet_90_minutes",
+      "type": "activity",
+      "title": "Mini-projet réalisable en 90 minutes",
+      "description": "Créer un projet, installer Express, créer server.js, exposer GET /users, lancer le serveur, tester localhost:3000/users, puis option bonus PostgreSQL avec une table users.",
+      "concept_tags": ["backend", "api_rest", "postgresql"],
+      "mode_targets": ["explorer"],
+      "duration_minutes": 90,
+      "resource_ids": ["res_activity_reading_nodejs", "res_activity_reading_postgresql"]
+    }
+  ],
+  "items": [
+    { "id": "notion_01_javascript_typescript_difference", "type": "notion", "mode": "explorer", "text": "Différence JavaScript / TypeScript", "concept_tags": ["javascript", "typescript"] },
+    { "id": "notion_02_typescript_typing", "type": "notion", "mode": "explorer", "text": "Typage (types, interfaces)", "concept_tags": ["typescript"] },
+    { "id": "notion_03_javascript_async_await", "type": "notion", "mode": "explorer", "text": "async / await", "concept_tags": ["javascript"] },
+    { "id": "notion_04_javascript_modules", "type": "notion", "mode": "explorer", "text": "Modules", "concept_tags": ["javascript"] },
+    { "id": "notion_05_api_rest_definition", "type": "notion", "mode": "explorer", "text": "Ce qu'est une API REST", "concept_tags": ["api_rest"] },
+    { "id": "notion_06_api_rest_endpoint", "type": "notion", "mode": "explorer", "text": "Endpoint", "concept_tags": ["api_rest"] },
+    { "id": "notion_07_json_definition", "type": "notion", "mode": "explorer", "text": "JSON", "concept_tags": ["json"] },
+    { "id": "notion_08_postgresql_table", "type": "notion", "mode": "explorer", "text": "Table", "concept_tags": ["postgresql"] },
+    { "id": "notion_09_postgresql_relation", "type": "notion", "mode": "explorer", "text": "Relation", "concept_tags": ["postgresql"] },
+    { "id": "notion_10_postgresql_sql_query", "type": "notion", "mode": "explorer", "text": "Requête SQL", "concept_tags": ["postgresql"] },
+    { "id": "notion_11_cloud_why", "type": "notion", "mode": "explorer", "text": "Pourquoi on utilise le cloud", "concept_tags": ["cloud"] },
+    { "id": "notion_12_aws_role", "type": "notion", "mode": "explorer", "text": "Rôle d'AWS dans une application", "concept_tags": ["aws"] },
+
+    { "id": "question_01_javascript_vs_typescript", "type": "question", "mode": "se_lancer", "text": "Quelle est la différence entre JavaScript et TypeScript ?", "concept_tags": ["javascript", "typescript"] },
+    { "id": "question_02_why_typescript", "type": "question", "mode": "se_lancer", "text": "Pourquoi utiliser TypeScript dans un projet ?", "concept_tags": ["typescript"] },
+    { "id": "question_03_type_or_interface", "type": "question", "mode": "se_lancer", "text": "Qu'est-ce qu'un type ou une interface ?", "concept_tags": ["typescript"] },
+    { "id": "question_04_async_await", "type": "question", "mode": "se_lancer", "text": "Que fait async / await ?", "concept_tags": ["javascript"] },
+    { "id": "question_05_let_const_var", "type": "question", "mode": "se_lancer", "text": "Quelle est la différence entre let, const et var ?", "concept_tags": ["javascript"] },
+    { "id": "question_06_what_is_api_rest", "type": "question", "mode": "se_lancer", "text": "Qu'est-ce qu'une API REST ?", "concept_tags": ["api_rest"] },
+    { "id": "question_07_what_is_endpoint", "type": "question", "mode": "se_lancer", "text": "Que signifie un endpoint ?", "concept_tags": ["api_rest"] },
+    { "id": "question_08_get_vs_post", "type": "question", "mode": "se_lancer", "text": "Quelle différence entre GET et POST ?", "concept_tags": ["api_rest"] },
+    { "id": "question_09_json_role", "type": "question", "mode": "se_lancer", "text": "À quoi sert JSON dans une API ?", "concept_tags": ["json", "api_rest"] },
+    { "id": "question_10_what_is_backend", "type": "question", "mode": "se_lancer", "text": "Qu'est-ce que le backend dans une application web ?", "concept_tags": ["backend"] },
+    { "id": "question_11_what_is_table", "type": "question", "mode": "se_lancer", "text": "Qu'est-ce qu'une table dans une base de données ?", "concept_tags": ["postgresql"] },
+    { "id": "question_12_primary_key", "type": "question", "mode": "se_lancer", "text": "Qu'est-ce qu'une clé primaire ?", "concept_tags": ["postgresql"] },
+    { "id": "question_13_why_index", "type": "question", "mode": "se_lancer", "text": "Pourquoi indexer une base ?", "concept_tags": ["postgresql"] },
+    { "id": "question_14_what_is_sql", "type": "question", "mode": "se_lancer", "text": "À quoi sert SQL ?", "concept_tags": ["postgresql"] },
+    { "id": "question_15_why_postgresql", "type": "question", "mode": "se_lancer", "text": "Pourquoi utiliser PostgreSQL ?", "concept_tags": ["postgresql"] },
+    { "id": "question_16_why_cloud", "type": "question", "mode": "se_lancer", "text": "Pourquoi utiliser le cloud plutôt qu'un serveur local ?", "concept_tags": ["cloud"] },
+    { "id": "question_17_what_is_aws_for", "type": "question", "mode": "se_lancer", "text": "À quoi sert Amazon Web Services ?", "concept_tags": ["aws"] },
+    { "id": "question_18_storage_vs_database", "type": "question", "mode": "se_lancer", "text": "Quelle différence entre stockage et base de données ?", "concept_tags": ["cloud", "postgresql"] },
+    { "id": "question_19_what_is_server", "type": "question", "mode": "se_lancer", "text": "Qu'est-ce qu'un serveur ?", "concept_tags": ["backend", "cloud"] },
+    { "id": "question_20_what_is_deployment", "type": "question", "mode": "se_lancer", "text": "Qu'est-ce que le déploiement d'une application ?", "concept_tags": ["cloud", "aws", "architecture_web"] },
+
+    { "id": "error_01_frontend_backend_confusion", "type": "error", "mode": "se_lancer", "text": "Mélanger frontend et backend", "concept_tags": ["backend", "architecture_web"] },
+    { "id": "error_02_api_database_confusion", "type": "error", "mode": "se_lancer", "text": "Confondre API et base de données", "concept_tags": ["api_rest", "postgresql", "architecture_web"] },
+    { "id": "error_03_typescript_replaces_javascript", "type": "error", "mode": "se_lancer", "text": "Penser que TypeScript remplace JavaScript", "concept_tags": ["javascript", "typescript"] },
+    { "id": "error_04_does_not_understand_http", "type": "error", "mode": "se_lancer", "text": "Ne pas comprendre HTTP", "concept_tags": ["api_rest"] },
+    { "id": "error_05_claims_can_code_without_example", "type": "error", "mode": "se_lancer", "text": "Dire \"je sais coder\" sans exemple", "concept_tags": ["architecture_web"] },
+    { "id": "error_06_does_not_understand_errors", "type": "error", "mode": "se_lancer", "text": "Ne pas comprendre les erreurs", "concept_tags": ["architecture_web"] },
+    { "id": "error_07_copies_ai_code_without_understanding", "type": "error", "mode": "se_lancer", "text": "Copier du code IA sans comprendre", "concept_tags": ["architecture_web"] },
+    { "id": "error_08_ignores_project_structure", "type": "error", "mode": "se_lancer", "text": "Ignorer la structure du projet", "concept_tags": ["architecture_web"] },
+    { "id": "error_09_does_not_ask_technical_questions", "type": "error", "mode": "se_lancer", "text": "Ne pas poser de questions techniques", "concept_tags": ["architecture_web"] },
+    { "id": "error_10_thinks_expert_expected", "type": "error", "mode": "se_lancer", "text": "Croire qu'on attend un expert", "concept_tags": ["architecture_web"] }
+  ]
+}

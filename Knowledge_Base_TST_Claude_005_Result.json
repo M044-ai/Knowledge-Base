@@ -1,0 +1,124 @@
+```json
+{
+  "schema_version": "2.0",
+  "role": "source_of_truth_for_claude_assembly",
+  "rules": {
+    "single_json_only": true,
+    "blocks_are_content_truth": true,
+    "mappings_are_selection_truth": true,
+    "no_external_knowledge": true,
+    "no_new_blocks": true,
+    "only_fill_pages_content": true
+  },
+  "test_scope": {
+    "description": "Mini-benchmark d'assemblage contrôlé",
+    "pages_under_test": [
+      "page_decouvrir_architecture_web",
+      "page_decouvrir_api_rest",
+      "page_explorer_typescript",
+      "page_se_lancer_postgresql"
+    ]
+  },
+  "concepts": [
+    { "id": "architecture_web", "label": "Architecture d'une application web" },
+    { "id": "api_rest", "label": "API REST" },
+    { "id": "typescript", "label": "TypeScript" },
+    { "id": "postgresql", "label": "PostgreSQL" }
+  ],
+  "modes": [
+    { "id": "decouvrir", "label": "Découvrir" },
+    { "id": "explorer", "label": "Explorer" },
+    { "id": "se_lancer", "label": "Se lancer" }
+  ],
+  "resource_types": ["video", "reading"],
+  "item_types": ["notion", "question", "error", "activity", "resource"],
+  "pages": [
+    {
+      "id": "page_decouvrir_architecture_web",
+      "concept": "architecture_web",
+      "mode": "decouvrir",
+      "title": "Architecture d'une application web",
+      "resource_ids": ["res_architecture_video_modern_web_app"],
+      "item_ids": [],
+      "content": "Une application web moderne s'appuie sur plusieurs couches qui interagissent entre elles pour fournir un service à l'utilisateur. Le frontend correspond à l'interface utilisée par l'utilisateur, tandis que l'API backend gère la logique et le dialogue avec la base de données. PostgreSQL est utilisé pour stocker les données, et l'infrastructure AWS permet de faire tourner l'ensemble. La chaîne complète peut se lire ainsi : le navigateur communique avec l'API, l'API lit ou écrit dans PostgreSQL, et l'ensemble est hébergé sur AWS."
+    },
+    {
+      "id": "page_decouvrir_api_rest",
+      "concept": "api_rest",
+      "mode": "decouvrir",
+      "title": "API REST",
+      "resource_ids": ["res_api_rest_video_explained", "res_api_rest_reading_restfulapi"],
+      "item_ids": [],
+      "content": "Une API REST est une interface qui permet à des applications de communiquer via des requêtes HTTP. Elle expose des endpoints qui permettent de lire ou de modifier des données, comme par exemple GET /users et POST /orders. Dans ce contexte, JSON fait partie des notions à comprendre pour suivre les échanges de données."
+    },
+    {
+      "id": "page_explorer_typescript",
+      "concept": "typescript",
+      "mode": "explorer",
+      "title": "Notions essentielles TypeScript",
+      "resource_ids": [],
+      "item_ids": [
+        "notion_01_javascript_typescript_difference",
+        "notion_02_typescript_typing"
+      ],
+      "content": "TypeScript est une extension de JavaScript qui ajoute un système de typage. La différence entre JavaScript et TypeScript tient donc à l'ajout de types dans TypeScript. Le typage, avec des types et des interfaces, permet de détecter certaines erreurs avant l'exécution et de rendre le code plus robuste."
+    },
+    {
+      "id": "page_se_lancer_postgresql",
+      "concept": "postgresql",
+      "mode": "se_lancer",
+      "title": "Questions et erreurs PostgreSQL",
+      "resource_ids": [],
+      "item_ids": [
+        "question_11_what_is_table",
+        "question_12_primary_key",
+        "question_13_why_index",
+        "question_14_what_is_sql",
+        "question_15_why_postgresql",
+        "question_18_storage_vs_database",
+        "error_02_api_database_confusion"
+      ],
+      "content": "PostgreSQL est une base de données relationnelle utilisée pour stocker des données structurées et effectuer des requêtes SQL. Les questions associées portent notamment sur la table, la clé primaire, l'index, SQL et l'intérêt d'utiliser PostgreSQL. Une erreur fréquente consiste à confondre l'API et la base de données, alors qu'elles n'ont pas le même rôle. Une autre question liée consiste à distinguer le stockage d'une base de données structurée."
+    }
+  ],
+  "blocks": [
+    { "id": "blk_arch_001", "concept": "architecture_web", "type": "definition", "text": "Une application web moderne s'appuie sur plusieurs couches qui interagissent entre elles pour fournir un service à l'utilisateur." },
+    { "id": "blk_arch_002", "concept": "architecture_web", "type": "definition", "text": "Le frontend correspond à l'interface utilisée par l'utilisateur, tandis que l'API backend gère la logique et le dialogue avec la base de données." },
+    { "id": "blk_arch_003", "concept": "architecture_web", "type": "definition", "text": "PostgreSQL est utilisé pour stocker les données, et l'infrastructure AWS permet de faire tourner l'ensemble." },
+    { "id": "blk_arch_004", "concept": "architecture_web", "type": "explanation", "text": "La chaîne complète peut se lire ainsi : le navigateur communique avec l'API, l'API lit ou écrit dans PostgreSQL, et l'ensemble est hébergé sur AWS." },
+    { "id": "blk_api_001", "concept": "api_rest", "type": "definition", "text": "Une API REST est une interface qui permet à des applications de communiquer via des requêtes HTTP." },
+    { "id": "blk_api_002", "concept": "api_rest", "type": "definition", "text": "Elle expose des endpoints qui permettent de lire ou de modifier des données." },
+    { "id": "blk_api_003", "concept": "api_rest", "type": "example", "text": "Des exemples d'endpoints sont GET /users et POST /orders." },
+    { "id": "blk_api_004", "concept": "api_rest", "type": "explanation", "text": "Dans ce contexte, JSON fait partie des notions à comprendre pour suivre les échanges de données." },
+    { "id": "blk_ts_001", "concept": "typescript", "type": "definition", "text": "TypeScript est une extension de JavaScript qui ajoute un système de typage." },
+    { "id": "blk_ts_002", "concept": "typescript", "type": "explanation", "text": "La différence entre JavaScript et TypeScript tient donc à l'ajout de types dans TypeScript." },
+    { "id": "blk_ts_003", "concept": "typescript", "type": "explanation", "text": "Le typage, avec des types et des interfaces, permet de détecter certaines erreurs avant l'exécution et de rendre le code plus robuste." },
+    { "id": "blk_pg_001", "concept": "postgresql", "type": "definition", "text": "PostgreSQL est une base de données relationnelle utilisée pour stocker des données structurées et effectuer des requêtes SQL." },
+    { "id": "blk_pg_002", "concept": "postgresql", "type": "explanation", "text": "Les questions associées portent notamment sur la table, la clé primaire, l'index, SQL et l'intérêt d'utiliser PostgreSQL." },
+    { "id": "blk_pg_003", "concept": "postgresql", "type": "warning", "text": "Une erreur fréquente consiste à confondre l'API et la base de données, alors qu'elles n'ont pas le même rôle." },
+    { "id": "blk_pg_004", "concept": "postgresql", "type": "explanation", "text": "Une autre question liée consiste à distinguer le stockage d'une base de données structurée." }
+  ],
+  "page_block_mappings": [
+    { "page_id": "page_decouvrir_architecture_web", "block_ids": ["blk_arch_001", "blk_arch_002", "blk_arch_003", "blk_arch_004"] },
+    { "page_id": "page_decouvrir_api_rest", "block_ids": ["blk_api_001", "blk_api_002", "blk_api_003", "blk_api_004"] },
+    { "page_id": "page_explorer_typescript", "block_ids": ["blk_ts_001", "blk_ts_002", "blk_ts_003"] },
+    { "page_id": "page_se_lancer_postgresql", "block_ids": ["blk_pg_001", "blk_pg_002", "blk_pg_003", "blk_pg_004"] }
+  ],
+  "resources": [
+    { "id": "res_architecture_video_modern_web_app", "type": "video", "title": "Comment fonctionne une application web moderne", "url": "https://www.youtube.com/watch?v=QX4nR7ZB5w8", "concept_tags": ["architecture_web"] },
+    { "id": "res_api_rest_video_explained", "type": "video", "title": "REST API expliquée simplement", "url": "https://www.youtube.com/watch?v=-MTSQjw5DrM", "concept_tags": ["api_rest"] },
+    { "id": "res_api_rest_reading_restfulapi", "type": "reading", "title": "Introduction REST API", "url": "https://restfulapi.net/", "concept_tags": ["api_rest"] }
+  ],
+  "items": [
+    { "id": "notion_01_javascript_typescript_difference", "type": "notion", "mode": "explorer", "text": "Différence JavaScript / TypeScript", "concept_tags": ["typescript"] },
+    { "id": "notion_02_typescript_typing", "type": "notion", "mode": "explorer", "text": "Typage (types, interfaces)", "concept_tags": ["typescript"] },
+    { "id": "question_11_what_is_table", "type": "question", "mode": "se_lancer", "text": "Qu'est-ce qu'une table dans une base de données ?", "concept_tags": ["postgresql"] },
+    { "id": "question_12_primary_key", "type": "question", "mode": "se_lancer", "text": "Qu'est-ce qu'une clé primaire ?", "concept_tags": ["postgresql"] },
+    { "id": "question_13_why_index", "type": "question", "mode": "se_lancer", "text": "Pourquoi indexer une base ?", "concept_tags": ["postgresql"] },
+    { "id": "question_14_what_is_sql", "type": "question", "mode": "se_lancer", "text": "À quoi sert SQL ?", "concept_tags": ["postgresql"] },
+    { "id": "question_15_why_postgresql", "type": "question", "mode": "se_lancer", "text": "Pourquoi utiliser PostgreSQL ?", "concept_tags": ["postgresql"] },
+    { "id": "question_18_storage_vs_database", "type": "question", "mode": "se_lancer", "text": "Quelle différence entre stockage et base de données ?", "concept_tags": ["postgresql"] },
+    { "id": "error_02_api_database_confusion", "type": "error", "mode": "se_lancer", "text": "Confondre API et base de données", "concept_tags": ["postgresql"] }
+  ]
+}
+```
