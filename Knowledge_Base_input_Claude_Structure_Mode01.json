@@ -1,0 +1,353 @@
+{
+  "schema_version": "1.0",
+  "role": "source_of_truth_for_claude",
+  "rules": {
+    "markdown_is_archive_only": true,
+    "json_is_structuring_input": true,
+    "no_new_concepts": true,
+    "no_new_urls": true,
+    "no_implicit_tag_inference": true,
+    "global_tag_only": "architecture_web"
+  },
+  "concepts": [
+    {
+      "id": "architecture_web",
+      "label": "Architecture d’une application web",
+      "parent_id": null,
+      "children_ids": [
+        "javascript",
+        "typescript",
+        "backend",
+        "api_rest",
+        "json",
+        "postgresql",
+        "cloud",
+        "aws"
+      ]
+    },
+    {
+      "id": "javascript",
+      "label": "JavaScript",
+      "parent_id": "architecture_web",
+      "children_ids": [
+        "typescript"
+      ]
+    },
+    {
+      "id": "typescript",
+      "label": "TypeScript",
+      "parent_id": "javascript",
+      "children_ids": []
+    },
+    {
+      "id": "backend",
+      "label": "Backend",
+      "parent_id": "architecture_web",
+      "children_ids": [
+        "api_rest",
+        "postgresql"
+      ]
+    },
+    {
+      "id": "api_rest",
+      "label": "API REST",
+      "parent_id": "backend",
+      "children_ids": [
+        "json"
+      ]
+    },
+    {
+      "id": "json",
+      "label": "JSON",
+      "parent_id": "api_rest",
+      "children_ids": []
+    },
+    {
+      "id": "postgresql",
+      "label": "PostgreSQL",
+      "parent_id": "backend",
+      "children_ids": []
+    },
+    {
+      "id": "cloud",
+      "label": "Cloud",
+      "parent_id": "architecture_web",
+      "children_ids": [
+        "aws"
+      ]
+    },
+    {
+      "id": "aws",
+      "label": "AWS",
+      "parent_id": "cloud",
+      "children_ids": []
+    }
+  ],
+  "modes": [
+    { "id": "decouvrir", "label": "Découvrir" },
+    { "id": "explorer", "label": "Explorer" },
+    { "id": "se_lancer", "label": "Se lancer" }
+  ],
+  "resource_types": ["video", "reading"],
+  "item_types": ["notion", "question", "error", "activity", "resource"],
+  "source_sections": [
+    { "id": "raw_intro_stack", "title": "Introduction : Vision globale de la stack demandée" },
+    { "id": "raw_javascript", "title": "1 Comprendre JavaScript moderne" },
+    { "id": "raw_typescript", "title": "2 TypeScript" },
+    { "id": "raw_node_api", "title": "3 Node.js et API" },
+    { "id": "raw_postgresql", "title": "4 PostgreSQL" },
+    { "id": "raw_aws", "title": "5 AWS" },
+    { "id": "raw_relier_tout", "title": "6 Relier tout" },
+    { "id": "raw_exercice_application", "title": "7 Mini projet" },
+    { "id": "raw_definitions", "title": "Définitions principales" }
+  ],
+  "resources": [
+    {
+      "id": "res_architecture_video_modern_web_app",
+      "type": "video",
+      "title": "Comment fonctionne une application web moderne",
+      "url": "https://www.youtube.com/watch?v=QX4nR7ZB5w8",
+      "concept_tags": ["architecture_web"],
+      "source_section_id": "raw_relier_tout"
+    },
+    {
+      "id": "res_javascript_video_100_seconds",
+      "type": "video",
+      "title": "JavaScript en 100 secondes",
+      "url": "https://www.youtube.com/watch?v=DHjqpvDnNGE",
+      "concept_tags": ["javascript"],
+      "source_section_id": "raw_javascript"
+    },
+    {
+      "id": "res_javascript_video_grafikart",
+      "type": "video",
+      "title": "JavaScript pour débutants – Grafikart (FR)",
+      "url": "https://www.youtube.com/watch?v=ItYyeQj0wIM",
+      "concept_tags": ["javascript"],
+      "source_section_id": "raw_javascript"
+    },
+    {
+      "id": "res_javascript_reading_mdn_intro",
+      "type": "reading",
+      "title": "MDN introduction JavaScript",
+      "url": "https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Introduction",
+      "concept_tags": ["javascript"],
+      "source_section_id": "raw_javascript"
+    },
+    {
+      "id": "res_typescript_video_100_seconds",
+      "type": "video",
+      "title": "TypeScript en 100 secondes",
+      "url": "https://www.youtube.com/watch?v=zQnBQ4tB3ZA",
+      "concept_tags": ["typescript"],
+      "source_section_id": "raw_typescript"
+    },
+    {
+      "id": "res_typescript_video_intro_fr",
+      "type": "video",
+      "title": "Introduction TypeScript (FR)",
+      "url": "https://www.youtube.com/watch?v=X8F0hU7FJx4",
+      "concept_tags": ["typescript"],
+      "source_section_id": "raw_typescript"
+    },
+    {
+      "id": "res_typescript_reading_official_5min",
+      "type": "reading",
+      "title": "TypeScript in 5 minutes",
+      "url": "https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html",
+      "concept_tags": ["typescript"],
+      "source_section_id": "raw_typescript"
+    },
+    {
+      "id": "res_api_rest_video_explained",
+      "type": "video",
+      "title": "REST API expliquée simplement",
+      "url": "https://www.youtube.com/watch?v=-MTSQjw5DrM",
+      "concept_tags": ["api_rest"],
+      "source_section_id": "raw_node_api"
+    },
+    {
+      "id": "res_backend_video_node_100_seconds",
+      "type": "video",
+      "title": "Node.js expliqué en 100 secondes",
+      "url": "https://www.youtube.com/watch?v=TlB_eWDSMt4",
+      "concept_tags": ["backend"],
+      "source_section_id": "raw_node_api"
+    },
+    {
+      "id": "res_api_rest_reading_restfulapi",
+      "type": "reading",
+      "title": "Introduction REST API",
+      "url": "https://restfulapi.net/",
+      "concept_tags": ["api_rest"],
+      "source_section_id": "raw_node_api"
+    },
+    {
+      "id": "res_postgresql_video_sql_100_seconds",
+      "type": "video",
+      "title": "SQL en 100 secondes",
+      "url": "https://www.youtube.com/watch?v=zsjvFFKOm3c",
+      "concept_tags": ["postgresql"],
+      "source_section_id": "raw_postgresql"
+    },
+    {
+      "id": "res_postgresql_video_intro_fr",
+      "type": "video",
+      "title": "PostgreSQL introduction (FR)",
+      "url": "https://www.youtube.com/watch?v=qw--VYLpxG4",
+      "concept_tags": ["postgresql"],
+      "source_section_id": "raw_postgresql"
+    },
+    {
+      "id": "res_postgresql_reading_sqlbolt",
+      "type": "reading",
+      "title": "Introduction SQL",
+      "url": "https://sqlbolt.com/fr/",
+      "concept_tags": ["postgresql"],
+      "source_section_id": "raw_postgresql"
+    },
+    {
+      "id": "res_aws_video_explained",
+      "type": "video",
+      "title": "AWS expliqué simplement",
+      "url": "https://www.youtube.com/watch?v=mxT233EdY5c",
+      "concept_tags": ["aws"],
+      "source_section_id": "raw_aws"
+    },
+    {
+      "id": "res_aws_video_100_seconds",
+      "type": "video",
+      "title": "AWS en 100 secondes",
+      "url": "https://www.youtube.com/watch?v=H4AwR_xY-Kw",
+      "concept_tags": ["aws"],
+      "source_section_id": "raw_aws"
+    },
+    {
+      "id": "res_aws_reading_what_is_aws",
+      "type": "reading",
+      "title": "Présentation AWS",
+      "url": "https://aws.amazon.com/fr/what-is-aws/",
+      "concept_tags": ["aws"],
+      "source_section_id": "raw_aws"
+    },
+    {
+      "id": "res_activity_video_create_api_node_postgres",
+      "type": "video",
+      "title": "Créer une API Node + PostgreSQL",
+      "url": "https://www.youtube.com/watch?v=ldYcgPKEZC8",
+      "concept_tags": ["backend", "api_rest", "postgresql"],
+      "source_section_id": "raw_exercice_application"
+    }
+  ],
+  "pages": [
+    {
+      "id": "page_decouvrir_architecture_web",
+      "concept": "architecture_web",
+      "mode": "decouvrir",
+      "title": "Architecture d’une application web",
+      "source_section_ids": ["raw_intro_stack", "raw_relier_tout"],
+      "resource_ids": ["res_architecture_video_modern_web_app"],
+      "item_ids": []
+    },
+    {
+      "id": "page_decouvrir_javascript",
+      "concept": "javascript",
+      "mode": "decouvrir",
+      "title": "Comprendre JavaScript moderne",
+      "source_section_ids": ["raw_javascript"],
+      "resource_ids": [
+        "res_javascript_video_100_seconds",
+        "res_javascript_video_grafikart",
+        "res_javascript_reading_mdn_intro"
+      ],
+      "item_ids": []
+    },
+    {
+      "id": "page_decouvrir_typescript",
+      "concept": "typescript",
+      "mode": "decouvrir",
+      "title": "TypeScript",
+      "source_section_ids": ["raw_typescript"],
+      "resource_ids": [
+        "res_typescript_video_100_seconds",
+        "res_typescript_video_intro_fr",
+        "res_typescript_reading_official_5min"
+      ],
+      "item_ids": []
+    },
+    {
+      "id": "page_decouvrir_backend",
+      "concept": "backend",
+      "mode": "decouvrir",
+      "title": "Node.js et backend",
+      "source_section_ids": ["raw_node_api"],
+      "resource_ids": ["res_backend_video_node_100_seconds"],
+      "item_ids": []
+    },
+    {
+      "id": "page_decouvrir_api_rest",
+      "concept": "api_rest",
+      "mode": "decouvrir",
+      "title": "API REST",
+      "source_section_ids": ["raw_node_api"],
+      "resource_ids": [
+        "res_api_rest_video_explained",
+        "res_api_rest_reading_restfulapi"
+      ],
+      "item_ids": []
+    },
+    {
+      "id": "page_decouvrir_json",
+      "concept": "json",
+      "mode": "decouvrir",
+      "title": "JSON",
+      "source_section_ids": ["raw_node_api", "raw_definitions"],
+      "resource_ids": [],
+      "item_ids": []
+    },
+    {
+      "id": "page_decouvrir_postgresql",
+      "concept": "postgresql",
+      "mode": "decouvrir",
+      "title": "PostgreSQL",
+      "source_section_ids": ["raw_postgresql"],
+      "resource_ids": [
+        "res_postgresql_video_sql_100_seconds",
+        "res_postgresql_video_intro_fr",
+        "res_postgresql_reading_sqlbolt"
+      ],
+      "item_ids": []
+    },
+    {
+      "id": "page_decouvrir_cloud",
+      "concept": "cloud",
+      "mode": "decouvrir",
+      "title": "Cloud",
+      "source_section_ids": ["raw_aws", "raw_definitions"],
+      "resource_ids": [],
+      "item_ids": []
+    },
+    {
+      "id": "page_decouvrir_aws",
+      "concept": "aws",
+      "mode": "decouvrir",
+      "title": "AWS",
+      "source_section_ids": ["raw_aws"],
+      "resource_ids": [
+        "res_aws_video_explained",
+        "res_aws_video_100_seconds",
+        "res_aws_reading_what_is_aws"
+      ],
+      "item_ids": []
+    }
+  ],
+  "claude_contract": {
+    "must_use_this_json_as_authoritative_structure": true,
+    "markdown_supplies_raw_text_only": true,
+    "must_not_create_or_remove_objects": true,
+    "must_not_change_ids": true,
+    "must_not_change_urls": true,
+    "must_fill_page_content_from_source_sections": true,
+    "must_keep_item_text_exact_for_questions_errors_notions": true
+  }
+}
