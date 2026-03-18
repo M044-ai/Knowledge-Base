@@ -1,0 +1,327 @@
+{
+  "schema_version": "1.0",
+  "role": "source_of_truth_for_claude",
+  "rules": {
+    "markdown_is_archive_only": true,
+    "json_is_structuring_input": true,
+    "no_new_concepts": true,
+    "no_new_urls": true,
+    "no_implicit_tag_inference": true,
+    "global_tag_only": "architecture_web"
+  },
+  "concepts": [
+    {
+      "id": "architecture_web",
+      "label": "Architecture d’une application web",
+      "parent_id": null,
+      "children_ids": [
+        "javascript",
+        "typescript",
+        "backend",
+        "api_rest",
+        "json",
+        "postgresql",
+        "cloud",
+        "aws"
+      ]
+    },
+    {
+      "id": "javascript",
+      "label": "JavaScript",
+      "parent_id": "architecture_web",
+      "children_ids": ["typescript"]
+    },
+    {
+      "id": "typescript",
+      "label": "TypeScript",
+      "parent_id": "javascript",
+      "children_ids": []
+    },
+    {
+      "id": "backend",
+      "label": "Backend",
+      "parent_id": "architecture_web",
+      "children_ids": ["api_rest", "postgresql"]
+    },
+    {
+      "id": "api_rest",
+      "label": "API REST",
+      "parent_id": "backend",
+      "children_ids": ["json"]
+    },
+    {
+      "id": "json",
+      "label": "JSON",
+      "parent_id": "api_rest",
+      "children_ids": []
+    },
+    {
+      "id": "postgresql",
+      "label": "PostgreSQL",
+      "parent_id": "backend",
+      "children_ids": []
+    },
+    {
+      "id": "cloud",
+      "label": "Cloud",
+      "parent_id": "architecture_web",
+      "children_ids": ["aws"]
+    },
+    {
+      "id": "aws",
+      "label": "AWS",
+      "parent_id": "cloud",
+      "children_ids": []
+    }
+  ],
+  "modes": [
+    { "id": "decouvrir", "label": "Découvrir" },
+    { "id": "explorer", "label": "Explorer" },
+    { "id": "se_lancer", "label": "Se lancer" }
+  ],
+  "resource_types": ["video", "reading"],
+  "item_types": ["notion", "question", "error", "activity", "resource"],
+  "source_sections": [
+    { "id": "raw_stack_en_une_page", "title": "La stack expliquée en une page" },
+    { "id": "raw_12_notions", "title": "Les 12 notions exactes à maîtriser pour un entretien" },
+    { "id": "raw_mini_projet_90", "title": "Mini-projet réalisable en 90 minutes" }
+  ],
+  "resources": [
+    {
+      "id": "res_activity_reading_nodejs",
+      "type": "reading",
+      "title": "Installer Node.js",
+      "url": "https://nodejs.org",
+      "concept_tags": ["backend"],
+      "source_section_id": "raw_mini_projet_90"
+    },
+    {
+      "id": "res_activity_reading_postgresql",
+      "type": "reading",
+      "title": "Installer PostgreSQL",
+      "url": "https://www.postgresql.org",
+      "concept_tags": ["postgresql"],
+      "source_section_id": "raw_mini_projet_90"
+    }
+  ],
+  "activities": [
+    {
+      "id": "activity_mini_projet_90_minutes",
+      "type": "activity",
+      "title": "Mini-projet réalisable en 90 minutes",
+      "description": "Créer un projet, installer Express, créer server.js, exposer GET /users, lancer le serveur, tester localhost:3000/users, puis option bonus PostgreSQL avec une table users.",
+      "concept_tags": ["backend", "api_rest", "postgresql"],
+      "mode_targets": ["explorer"],
+      "duration_minutes": 90,
+      "resource_ids": [
+        "res_activity_reading_nodejs",
+        "res_activity_reading_postgresql"
+      ],
+      "source_section_id": "raw_mini_projet_90"
+    }
+  ],
+  "items": [
+    {
+      "id": "notion_01_javascript_typescript_difference",
+      "type": "notion",
+      "mode": "explorer",
+      "text": "Différence JavaScript / TypeScript",
+      "concept_tags": ["javascript", "typescript"],
+      "source_section_id": "raw_12_notions"
+    },
+    {
+      "id": "notion_02_typescript_typing",
+      "type": "notion",
+      "mode": "explorer",
+      "text": "Typage (types, interfaces)",
+      "concept_tags": ["typescript"],
+      "source_section_id": "raw_12_notions"
+    },
+    {
+      "id": "notion_03_javascript_async_await",
+      "type": "notion",
+      "mode": "explorer",
+      "text": "async / await",
+      "concept_tags": ["javascript"],
+      "source_section_id": "raw_12_notions"
+    },
+    {
+      "id": "notion_04_javascript_modules",
+      "type": "notion",
+      "mode": "explorer",
+      "text": "Modules",
+      "concept_tags": ["javascript"],
+      "source_section_id": "raw_12_notions"
+    },
+    {
+      "id": "notion_05_api_rest_definition",
+      "type": "notion",
+      "mode": "explorer",
+      "text": "Ce qu’est une API REST",
+      "concept_tags": ["api_rest"],
+      "source_section_id": "raw_12_notions"
+    },
+    {
+      "id": "notion_06_api_rest_endpoint",
+      "type": "notion",
+      "mode": "explorer",
+      "text": "Endpoint",
+      "concept_tags": ["api_rest"],
+      "source_section_id": "raw_12_notions"
+    },
+    {
+      "id": "notion_07_json_definition",
+      "type": "notion",
+      "mode": "explorer",
+      "text": "JSON",
+      "concept_tags": ["json"],
+      "source_section_id": "raw_12_notions"
+    },
+    {
+      "id": "notion_08_postgresql_table",
+      "type": "notion",
+      "mode": "explorer",
+      "text": "Table",
+      "concept_tags": ["postgresql"],
+      "source_section_id": "raw_12_notions"
+    },
+    {
+      "id": "notion_09_postgresql_relation",
+      "type": "notion",
+      "mode": "explorer",
+      "text": "Relation",
+      "concept_tags": ["postgresql"],
+      "source_section_id": "raw_12_notions"
+    },
+    {
+      "id": "notion_10_postgresql_sql_query",
+      "type": "notion",
+      "mode": "explorer",
+      "text": "Requête SQL",
+      "concept_tags": ["postgresql"],
+      "source_section_id": "raw_12_notions"
+    },
+    {
+      "id": "notion_11_cloud_why",
+      "type": "notion",
+      "mode": "explorer",
+      "text": "Pourquoi on utilise le cloud",
+      "concept_tags": ["cloud"],
+      "source_section_id": "raw_12_notions"
+    },
+    {
+      "id": "notion_12_aws_role",
+      "type": "notion",
+      "mode": "explorer",
+      "text": "Rôle d’AWS dans une application",
+      "concept_tags": ["aws"],
+      "source_section_id": "raw_12_notions"
+    }
+  ],
+  "pages": [
+    {
+      "id": "page_explorer_architecture_web",
+      "concept": "architecture_web",
+      "mode": "explorer",
+      "title": "Explorer l’architecture web",
+      "source_section_ids": ["raw_stack_en_une_page"],
+      "resource_ids": [],
+      "item_ids": []
+    },
+    {
+      "id": "page_explorer_javascript",
+      "concept": "javascript",
+      "mode": "explorer",
+      "title": "Notions essentielles JavaScript",
+      "source_section_ids": ["raw_12_notions"],
+      "resource_ids": [],
+      "item_ids": [
+        "notion_01_javascript_typescript_difference",
+        "notion_03_javascript_async_await",
+        "notion_04_javascript_modules"
+      ]
+    },
+    {
+      "id": "page_explorer_typescript",
+      "concept": "typescript",
+      "mode": "explorer",
+      "title": "Notions essentielles TypeScript",
+      "source_section_ids": ["raw_12_notions"],
+      "resource_ids": [],
+      "item_ids": [
+        "notion_01_javascript_typescript_difference",
+        "notion_02_typescript_typing"
+      ]
+    },
+    {
+      "id": "page_explorer_backend",
+      "concept": "backend",
+      "mode": "explorer",
+      "title": "Explorer le backend",
+      "source_section_ids": ["raw_stack_en_une_page"],
+      "resource_ids": [],
+      "item_ids": []
+    },
+    {
+      "id": "page_explorer_api_rest",
+      "concept": "api_rest",
+      "mode": "explorer",
+      "title": "Notions essentielles API REST",
+      "source_section_ids": ["raw_12_notions"],
+      "resource_ids": [],
+      "item_ids": [
+        "notion_05_api_rest_definition",
+        "notion_06_api_rest_endpoint"
+      ]
+    },
+    {
+      "id": "page_explorer_json",
+      "concept": "json",
+      "mode": "explorer",
+      "title": "Notions essentielles JSON",
+      "source_section_ids": ["raw_12_notions"],
+      "resource_ids": [],
+      "item_ids": ["notion_07_json_definition"]
+    },
+    {
+      "id": "page_explorer_postgresql",
+      "concept": "postgresql",
+      "mode": "explorer",
+      "title": "Notions essentielles PostgreSQL",
+      "source_section_ids": ["raw_12_notions"],
+      "resource_ids": [],
+      "item_ids": [
+        "notion_08_postgresql_table",
+        "notion_09_postgresql_relation",
+        "notion_10_postgresql_sql_query"
+      ]
+    },
+    {
+      "id": "page_explorer_cloud",
+      "concept": "cloud",
+      "mode": "explorer",
+      "title": "Notions essentielles Cloud",
+      "source_section_ids": ["raw_12_notions"],
+      "resource_ids": [],
+      "item_ids": ["notion_11_cloud_why"]
+    },
+    {
+      "id": "page_explorer_aws",
+      "concept": "aws",
+      "mode": "explorer",
+      "title": "Notions essentielles AWS",
+      "source_section_ids": ["raw_12_notions"],
+      "resource_ids": [],
+      "item_ids": ["notion_12_aws_role"]
+    }
+  ],
+  "claude_contract": {
+    "must_use_this_json_as_authoritative_structure": true,
+    "markdown_supplies_raw_text_only": true,
+    "must_not_create_or_remove_objects": true,
+    "must_not_change_ids": true,
+    "must_not_change_urls": true,
+    "must_fill_page_content_from_source_sections": true,
+    "must_keep_item_text_exact_for_questions_errors_notions": true
+  }
+}
