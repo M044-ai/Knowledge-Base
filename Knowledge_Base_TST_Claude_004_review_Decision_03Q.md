@@ -1,0 +1,1 @@
+Option A, mais comme c'est toi aussi a accès facilement à l'intégralité du projet (contrairement à ma mémoire ou à Claude), j'ai besoin que tu continues à générer les livrables

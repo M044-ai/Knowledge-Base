@@ -1,0 +1,1 @@
+Je pense que A peut être intéressant pour l'objectif pédagogique, et la valeur ajoutée du LLM

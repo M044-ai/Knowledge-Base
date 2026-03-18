@@ -1,0 +1,1 @@
+Go pour les livrables, je dois aussi savoir comment les fournir ( idéalement 1 prompt + 1 seul JSON)

@@ -1,0 +1,1 @@
+Architecture Web est une page chapeau, on va aussi tester une page spécifique par mode

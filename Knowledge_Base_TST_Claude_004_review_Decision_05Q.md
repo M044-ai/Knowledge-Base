@@ -1,0 +1,2 @@
+Je pense que c'est une restructuration plus cohérente avec l'objectif effectivement, et qui permet d'abandonner définitivement le raw à fournir une fois que les blocs sont générés.
+Les blocs doivent être moyens pour ne pas trop condenser et créer trop de petits blocs ou au contraire réunir trop d'idées dans un paragraphe.
