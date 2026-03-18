@@ -1,3 +1,6 @@
+# Ce prompt est appelé par Prompt_Encasing
+# Il applique les règles indépendamment du mode
+
 Tu vas transformer un contenu pédagogique brut en une knowledge base structurée pour une application.
 
 Tu recevras DEUX entrées :
