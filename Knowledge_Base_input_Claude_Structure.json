@@ -1,0 +1,1255 @@
+{
+  "schema_version": "1.0",
+  "role": "source_of_truth_for_claude",
+  "rules": {
+    "markdown_is_archive_only": true,
+    "json_is_structuring_input": true,
+    "no_new_concepts": true,
+    "no_new_urls": true,
+    "no_implicit_tag_inference": true,
+    "global_tag_only": "architecture_web"
+  },
+  "concepts": [
+    {
+      "id": "architecture_web",
+      "label": "Architecture d’une application web",
+      "parent_id": null,
+      "children_ids": [
+        "javascript",
+        "typescript",
+        "backend",
+        "api_rest",
+        "json",
+        "postgresql",
+        "cloud",
+        "aws"
+      ]
+    },
+    {
+      "id": "javascript",
+      "label": "JavaScript",
+      "parent_id": "architecture_web",
+      "children_ids": [
+        "typescript"
+      ]
+    },
+    {
+      "id": "typescript",
+      "label": "TypeScript",
+      "parent_id": "javascript",
+      "children_ids": []
+    },
+    {
+      "id": "backend",
+      "label": "Backend",
+      "parent_id": "architecture_web",
+      "children_ids": [
+        "api_rest",
+        "postgresql"
+      ]
+    },
+    {
+      "id": "api_rest",
+      "label": "API REST",
+      "parent_id": "backend",
+      "children_ids": [
+        "json"
+      ]
+    },
+    {
+      "id": "json",
+      "label": "JSON",
+      "parent_id": "api_rest",
+      "children_ids": []
+    },
+    {
+      "id": "postgresql",
+      "label": "PostgreSQL",
+      "parent_id": "backend",
+      "children_ids": []
+    },
+    {
+      "id": "cloud",
+      "label": "Cloud",
+      "parent_id": "architecture_web",
+      "children_ids": [
+        "aws"
+      ]
+    },
+    {
+      "id": "aws",
+      "label": "AWS",
+      "parent_id": "cloud",
+      "children_ids": []
+    }
+  ],
+  "modes": [
+    {
+      "id": "decouvrir",
+      "label": "Découvrir"
+    },
+    {
+      "id": "explorer",
+      "label": "Explorer"
+    },
+    {
+      "id": "se_lancer",
+      "label": "Se lancer"
+    }
+  ],
+  "resource_types": [
+    "video",
+    "reading"
+  ],
+  "item_types": [
+    "notion",
+    "question",
+    "error",
+    "activity",
+    "resource"
+  ],
+  "source_sections": [
+    {
+      "id": "raw_intro_stack",
+      "title": "Introduction : Vision globale de la stack demandée"
+    },
+    {
+      "id": "raw_javascript",
+      "title": "1 Comprendre JavaScript moderne"
+    },
+    {
+      "id": "raw_typescript",
+      "title": "2 TypeScript"
+    },
+    {
+      "id": "raw_node_api",
+      "title": "3 Node.js et API"
+    },
+    {
+      "id": "raw_postgresql",
+      "title": "4 PostgreSQL"
+    },
+    {
+      "id": "raw_aws",
+      "title": "5 AWS"
+    },
+    {
+      "id": "raw_relier_tout",
+      "title": "6 Relier tout"
+    },
+    {
+      "id": "raw_exercice_application",
+      "title": "7 Mini projet"
+    },
+    {
+      "id": "raw_stack_en_une_page",
+      "title": "La stack expliquée en une page"
+    },
+    {
+      "id": "raw_12_notions",
+      "title": "Les 12 notions exactes à maîtriser pour un entretien"
+    },
+    {
+      "id": "raw_mini_projet_90",
+      "title": "Mini-projet réalisable en 90 minutes"
+    },
+    {
+      "id": "raw_definitions",
+      "title": "Définitions principales"
+    },
+    {
+      "id": "raw_20_questions",
+      "title": "Les 20 questions techniques probables"
+    },
+    {
+      "id": "raw_reponses",
+      "title": "Réponses"
+    },
+    {
+      "id": "raw_10_erreurs",
+      "title": "Les 10 erreurs classiques des candidats débutants"
+    },
+    {
+      "id": "raw_conseils_strategiques",
+      "title": "Conseils stratégiques pour votre promo"
+    }
+  ],
+  "resources": [
+    {
+      "id": "res_architecture_video_modern_web_app",
+      "type": "video",
+      "title": "Comment fonctionne une application web moderne",
+      "url": "https://www.youtube.com/watch?v=QX4nR7ZB5w8",
+      "concept_tags": [
+        "architecture_web"
+      ],
+      "source_section_id": "raw_relier_tout"
+    },
+    {
+      "id": "res_javascript_video_100_seconds",
+      "type": "video",
+      "title": "JavaScript en 100 secondes",
+      "url": "https://www.youtube.com/watch?v=DHjqpvDnNGE",
+      "concept_tags": [
+        "javascript"
+      ],
+      "source_section_id": "raw_javascript"
+    },
+    {
+      "id": "res_javascript_video_grafikart",
+      "type": "video",
+      "title": "JavaScript pour débutants – Grafikart (FR)",
+      "url": "https://www.youtube.com/watch?v=ItYyeQj0wIM",
+      "concept_tags": [
+        "javascript"
+      ],
+      "source_section_id": "raw_javascript"
+    },
+    {
+      "id": "res_javascript_reading_mdn_intro",
+      "type": "reading",
+      "title": "MDN introduction JavaScript",
+      "url": "https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Introduction",
+      "concept_tags": [
+        "javascript"
+      ],
+      "source_section_id": "raw_javascript"
+    },
+    {
+      "id": "res_typescript_video_100_seconds",
+      "type": "video",
+      "title": "TypeScript en 100 secondes",
+      "url": "https://www.youtube.com/watch?v=zQnBQ4tB3ZA",
+      "concept_tags": [
+        "typescript"
+      ],
+      "source_section_id": "raw_typescript"
+    },
+    {
+      "id": "res_typescript_video_intro_fr",
+      "type": "video",
+      "title": "Introduction TypeScript (FR)",
+      "url": "https://www.youtube.com/watch?v=X8F0hU7FJx4",
+      "concept_tags": [
+        "typescript"
+      ],
+      "source_section_id": "raw_typescript"
+    },
+    {
+      "id": "res_typescript_reading_official_5min",
+      "type": "reading",
+      "title": "TypeScript in 5 minutes",
+      "url": "https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html",
+      "concept_tags": [
+        "typescript"
+      ],
+      "source_section_id": "raw_typescript"
+    },
+    {
+      "id": "res_api_rest_video_explained",
+      "type": "video",
+      "title": "REST API expliquée simplement",
+      "url": "https://www.youtube.com/watch?v=-MTSQjw5DrM",
+      "concept_tags": [
+        "api_rest"
+      ],
+      "source_section_id": "raw_node_api"
+    },
+    {
+      "id": "res_backend_video_node_100_seconds",
+      "type": "video",
+      "title": "Node.js expliqué en 100 secondes",
+      "url": "https://www.youtube.com/watch?v=TlB_eWDSMt4",
+      "concept_tags": [
+        "backend"
+      ],
+      "source_section_id": "raw_node_api"
+    },
+    {
+      "id": "res_api_rest_reading_restfulapi",
+      "type": "reading",
+      "title": "Introduction REST API",
+      "url": "https://restfulapi.net/",
+      "concept_tags": [
+        "api_rest"
+      ],
+      "source_section_id": "raw_node_api"
+    },
+    {
+      "id": "res_postgresql_video_sql_100_seconds",
+      "type": "video",
+      "title": "SQL en 100 secondes",
+      "url": "https://www.youtube.com/watch?v=zsjvFFKOm3c",
+      "concept_tags": [
+        "postgresql"
+      ],
+      "source_section_id": "raw_postgresql"
+    },
+    {
+      "id": "res_postgresql_video_intro_fr",
+      "type": "video",
+      "title": "PostgreSQL introduction (FR)",
+      "url": "https://www.youtube.com/watch?v=qw--VYLpxG4",
+      "concept_tags": [
+        "postgresql"
+      ],
+      "source_section_id": "raw_postgresql"
+    },
+    {
+      "id": "res_postgresql_reading_sqlbolt",
+      "type": "reading",
+      "title": "Introduction SQL",
+      "url": "https://sqlbolt.com/fr/",
+      "concept_tags": [
+        "postgresql"
+      ],
+      "source_section_id": "raw_postgresql"
+    },
+    {
+      "id": "res_aws_video_explained",
+      "type": "video",
+      "title": "AWS expliqué simplement",
+      "url": "https://www.youtube.com/watch?v=mxT233EdY5c",
+      "concept_tags": [
+        "aws"
+      ],
+      "source_section_id": "raw_aws"
+    },
+    {
+      "id": "res_aws_video_100_seconds",
+      "type": "video",
+      "title": "AWS en 100 secondes",
+      "url": "https://www.youtube.com/watch?v=H4AwR_xY-Kw",
+      "concept_tags": [
+        "aws"
+      ],
+      "source_section_id": "raw_aws"
+    },
+    {
+      "id": "res_aws_reading_what_is_aws",
+      "type": "reading",
+      "title": "Présentation AWS",
+      "url": "https://aws.amazon.com/fr/what-is-aws/",
+      "concept_tags": [
+        "aws"
+      ],
+      "source_section_id": "raw_aws"
+    },
+    {
+      "id": "res_activity_video_create_api_node_postgres",
+      "type": "video",
+      "title": "Créer une API Node + PostgreSQL",
+      "url": "https://www.youtube.com/watch?v=ldYcgPKEZC8",
+      "concept_tags": [
+        "backend",
+        "api_rest",
+        "postgresql"
+      ],
+      "source_section_id": "raw_exercice_application"
+    },
+    {
+      "id": "res_activity_reading_nodejs",
+      "type": "reading",
+      "title": "Installer Node.js",
+      "url": "https://nodejs.org",
+      "concept_tags": [
+        "backend"
+      ],
+      "source_section_id": "raw_mini_projet_90"
+    },
+    {
+      "id": "res_activity_reading_postgresql",
+      "type": "reading",
+      "title": "Installer PostgreSQL",
+      "url": "https://www.postgresql.org",
+      "concept_tags": [
+        "postgresql"
+      ],
+      "source_section_id": "raw_mini_projet_90"
+    }
+  ],
+  "activities": [
+    {
+      "id": "activity_exercice_application_simple_api",
+      "type": "activity",
+      "title": "Exercice d’application : API simple",
+      "description": "Faire un exemple simple d’API TypeScript : GET /users, POST /users, avec base PostgreSQL.",
+      "concept_tags": [
+        "backend",
+        "api_rest",
+        "postgresql"
+      ],
+      "mode_targets": [
+        "decouvrir"
+      ],
+      "duration_minutes": null,
+      "resource_ids": [
+        "res_activity_video_create_api_node_postgres"
+      ],
+      "source_section_id": "raw_exercice_application"
+    },
+    {
+      "id": "activity_mini_projet_90_minutes",
+      "type": "activity",
+      "title": "Mini-projet réalisable en 90 minutes",
+      "description": "Créer un projet, installer Express, créer server.js, exposer GET /users, lancer le serveur, tester localhost:3000/users, puis option bonus PostgreSQL avec une table users.",
+      "concept_tags": [
+        "backend",
+        "api_rest",
+        "postgresql"
+      ],
+      "mode_targets": [
+        "explorer"
+      ],
+      "duration_minutes": 90,
+      "resource_ids": [
+        "res_activity_reading_nodejs",
+        "res_activity_reading_postgresql"
+      ],
+      "source_section_id": "raw_mini_projet_90"
+    }
+  ],
+  "items": [
+    {
+      "id": "notion_01_javascript_typescript_difference",
+      "type": "notion",
+      "mode": "explorer",
+      "text": "Différence JavaScript / TypeScript",
+      "concept_tags": [
+        "javascript",
+        "typescript"
+      ],
+      "source_section_id": "raw_12_notions"
+    },
+    {
+      "id": "notion_02_typescript_typing",
+      "type": "notion",
+      "mode": "explorer",
+      "text": "Typage (types, interfaces)",
+      "concept_tags": [
+        "typescript"
+      ],
+      "source_section_id": "raw_12_notions"
+    },
+    {
+      "id": "notion_03_javascript_async_await",
+      "type": "notion",
+      "mode": "explorer",
+      "text": "async / await",
+      "concept_tags": [
+        "javascript"
+      ],
+      "source_section_id": "raw_12_notions"
+    },
+    {
+      "id": "notion_04_javascript_modules",
+      "type": "notion",
+      "mode": "explorer",
+      "text": "Modules",
+      "concept_tags": [
+        "javascript"
+      ],
+      "source_section_id": "raw_12_notions"
+    },
+    {
+      "id": "notion_05_api_rest_definition",
+      "type": "notion",
+      "mode": "explorer",
+      "text": "Ce qu’est une API REST",
+      "concept_tags": [
+        "api_rest"
+      ],
+      "source_section_id": "raw_12_notions"
+    },
+    {
+      "id": "notion_06_api_rest_endpoint",
+      "type": "notion",
+      "mode": "explorer",
+      "text": "Endpoint",
+      "concept_tags": [
+        "api_rest"
+      ],
+      "source_section_id": "raw_12_notions"
+    },
+    {
+      "id": "notion_07_json_definition",
+      "type": "notion",
+      "mode": "explorer",
+      "text": "JSON",
+      "concept_tags": [
+        "json"
+      ],
+      "source_section_id": "raw_12_notions"
+    },
+    {
+      "id": "notion_08_postgresql_table",
+      "type": "notion",
+      "mode": "explorer",
+      "text": "Table",
+      "concept_tags": [
+        "postgresql"
+      ],
+      "source_section_id": "raw_12_notions"
+    },
+    {
+      "id": "notion_09_postgresql_relation",
+      "type": "notion",
+      "mode": "explorer",
+      "text": "Relation",
+      "concept_tags": [
+        "postgresql"
+      ],
+      "source_section_id": "raw_12_notions"
+    },
+    {
+      "id": "notion_10_postgresql_sql_query",
+      "type": "notion",
+      "mode": "explorer",
+      "text": "Requête SQL",
+      "concept_tags": [
+        "postgresql"
+      ],
+      "source_section_id": "raw_12_notions"
+    },
+    {
+      "id": "notion_11_cloud_why",
+      "type": "notion",
+      "mode": "explorer",
+      "text": "Pourquoi on utilise le cloud",
+      "concept_tags": [
+        "cloud"
+      ],
+      "source_section_id": "raw_12_notions"
+    },
+    {
+      "id": "notion_12_aws_role",
+      "type": "notion",
+      "mode": "explorer",
+      "text": "Rôle d’AWS dans une application",
+      "concept_tags": [
+        "aws"
+      ],
+      "source_section_id": "raw_12_notions"
+    },
+    {
+      "id": "question_01_javascript_vs_typescript",
+      "type": "question",
+      "mode": "se_lancer",
+      "text": "Quelle est la différence entre JavaScript et TypeScript ?",
+      "concept_tags": [
+        "javascript",
+        "typescript"
+      ],
+      "source_section_id": "raw_20_questions"
+    },
+    {
+      "id": "question_02_why_typescript",
+      "type": "question",
+      "mode": "se_lancer",
+      "text": "Pourquoi utiliser TypeScript dans un projet ?",
+      "concept_tags": [
+        "typescript"
+      ],
+      "source_section_id": "raw_20_questions"
+    },
+    {
+      "id": "question_03_type_or_interface",
+      "type": "question",
+      "mode": "se_lancer",
+      "text": "Qu’est-ce qu’un type ou une interface ?",
+      "concept_tags": [
+        "typescript"
+      ],
+      "source_section_id": "raw_20_questions"
+    },
+    {
+      "id": "question_04_async_await",
+      "type": "question",
+      "mode": "se_lancer",
+      "text": "Que fait async / await ?",
+      "concept_tags": [
+        "javascript"
+      ],
+      "source_section_id": "raw_20_questions"
+    },
+    {
+      "id": "question_05_let_const_var",
+      "type": "question",
+      "mode": "se_lancer",
+      "text": "Quelle est la différence entre let, const et var ?",
+      "concept_tags": [
+        "javascript"
+      ],
+      "source_section_id": "raw_20_questions"
+    },
+    {
+      "id": "question_06_what_is_api_rest",
+      "type": "question",
+      "mode": "se_lancer",
+      "text": "Qu’est-ce qu’une API REST ?",
+      "concept_tags": [
+        "api_rest"
+      ],
+      "source_section_id": "raw_20_questions"
+    },
+    {
+      "id": "question_07_what_is_endpoint",
+      "type": "question",
+      "mode": "se_lancer",
+      "text": "Que signifie un endpoint ?",
+      "concept_tags": [
+        "api_rest"
+      ],
+      "source_section_id": "raw_20_questions"
+    },
+    {
+      "id": "question_08_get_vs_post",
+      "type": "question",
+      "mode": "se_lancer",
+      "text": "Quelle différence entre GET et POST ?",
+      "concept_tags": [
+        "api_rest"
+      ],
+      "source_section_id": "raw_20_questions"
+    },
+    {
+      "id": "question_09_json_role",
+      "type": "question",
+      "mode": "se_lancer",
+      "text": "À quoi sert JSON dans une API ?",
+      "concept_tags": [
+        "json",
+        "api_rest"
+      ],
+      "source_section_id": "raw_20_questions"
+    },
+    {
+      "id": "question_10_what_is_backend",
+      "type": "question",
+      "mode": "se_lancer",
+      "text": "Qu’est-ce que le backend dans une application web ?",
+      "concept_tags": [
+        "backend"
+      ],
+      "source_section_id": "raw_20_questions"
+    },
+    {
+      "id": "question_11_what_is_table",
+      "type": "question",
+      "mode": "se_lancer",
+      "text": "Qu’est-ce qu’une table dans une base de données ?",
+      "concept_tags": [
+        "postgresql"
+      ],
+      "source_section_id": "raw_20_questions"
+    },
+    {
+      "id": "question_12_primary_key",
+      "type": "question",
+      "mode": "se_lancer",
+      "text": "Qu’est-ce qu’une clé primaire ?",
+      "concept_tags": [
+        "postgresql"
+      ],
+      "source_section_id": "raw_20_questions"
+    },
+    {
+      "id": "question_13_why_index",
+      "type": "question",
+      "mode": "se_lancer",
+      "text": "Pourquoi indexer une base ?",
+      "concept_tags": [
+        "postgresql"
+      ],
+      "source_section_id": "raw_20_questions"
+    },
+    {
+      "id": "question_14_what_is_sql",
+      "type": "question",
+      "mode": "se_lancer",
+      "text": "À quoi sert SQL ?",
+      "concept_tags": [
+        "postgresql"
+      ],
+      "source_section_id": "raw_20_questions"
+    },
+    {
+      "id": "question_15_why_postgresql",
+      "type": "question",
+      "mode": "se_lancer",
+      "text": "Pourquoi utiliser PostgreSQL ?",
+      "concept_tags": [
+        "postgresql"
+      ],
+      "source_section_id": "raw_20_questions"
+    },
+    {
+      "id": "question_16_why_cloud",
+      "type": "question",
+      "mode": "se_lancer",
+      "text": "Pourquoi utiliser le cloud plutôt qu’un serveur local ?",
+      "concept_tags": [
+        "cloud"
+      ],
+      "source_section_id": "raw_20_questions"
+    },
+    {
+      "id": "question_17_what_is_aws_for",
+      "type": "question",
+      "mode": "se_lancer",
+      "text": "À quoi sert Amazon Web Services ?",
+      "concept_tags": [
+        "aws"
+      ],
+      "source_section_id": "raw_20_questions"
+    },
+    {
+      "id": "question_18_storage_vs_database",
+      "type": "question",
+      "mode": "se_lancer",
+      "text": "Quelle différence entre stockage et base de données ?",
+      "concept_tags": [
+        "cloud",
+        "postgresql"
+      ],
+      "source_section_id": "raw_20_questions"
+    },
+    {
+      "id": "question_19_what_is_server",
+      "type": "question",
+      "mode": "se_lancer",
+      "text": "Qu’est-ce qu’un serveur ?",
+      "concept_tags": [
+        "backend",
+        "cloud"
+      ],
+      "source_section_id": "raw_20_questions"
+    },
+    {
+      "id": "question_20_what_is_deployment",
+      "type": "question",
+      "mode": "se_lancer",
+      "text": "Qu’est-ce que le déploiement d’une application ?",
+      "concept_tags": [
+        "cloud",
+        "aws",
+        "architecture_web"
+      ],
+      "source_section_id": "raw_20_questions"
+    },
+    {
+      "id": "error_01_frontend_backend_confusion",
+      "type": "error",
+      "mode": "se_lancer",
+      "text": "Mélanger frontend et backend",
+      "concept_tags": [
+        "backend",
+        "architecture_web"
+      ],
+      "source_section_id": "raw_10_erreurs"
+    },
+    {
+      "id": "error_02_api_database_confusion",
+      "type": "error",
+      "mode": "se_lancer",
+      "text": "Confondre API et base de données",
+      "concept_tags": [
+        "api_rest",
+        "postgresql",
+        "architecture_web"
+      ],
+      "source_section_id": "raw_10_erreurs"
+    },
+    {
+      "id": "error_03_typescript_replaces_javascript",
+      "type": "error",
+      "mode": "se_lancer",
+      "text": "Penser que TypeScript remplace JavaScript",
+      "concept_tags": [
+        "javascript",
+        "typescript"
+      ],
+      "source_section_id": "raw_10_erreurs"
+    },
+    {
+      "id": "error_04_does_not_understand_http",
+      "type": "error",
+      "mode": "se_lancer",
+      "text": "Ne pas comprendre HTTP",
+      "concept_tags": [
+        "api_rest"
+      ],
+      "source_section_id": "raw_10_erreurs"
+    },
+    {
+      "id": "error_05_claims_can_code_without_example",
+      "type": "error",
+      "mode": "se_lancer",
+      "text": "Dire “je sais coder” sans exemple",
+      "concept_tags": [
+        "architecture_web"
+      ],
+      "source_section_id": "raw_10_erreurs"
+    },
+    {
+      "id": "error_06_does_not_understand_errors",
+      "type": "error",
+      "mode": "se_lancer",
+      "text": "Ne pas comprendre les erreurs",
+      "concept_tags": [
+        "architecture_web"
+      ],
+      "source_section_id": "raw_10_erreurs"
+    },
+    {
+      "id": "error_07_copies_ai_code_without_understanding",
+      "type": "error",
+      "mode": "se_lancer",
+      "text": "Copier du code IA sans comprendre",
+      "concept_tags": [
+        "architecture_web"
+      ],
+      "source_section_id": "raw_10_erreurs"
+    },
+    {
+      "id": "error_08_ignores_project_structure",
+      "type": "error",
+      "mode": "se_lancer",
+      "text": "Ignorer la structure du projet",
+      "concept_tags": [
+        "architecture_web"
+      ],
+      "source_section_id": "raw_10_erreurs"
+    },
+    {
+      "id": "error_09_does_not_ask_technical_questions",
+      "type": "error",
+      "mode": "se_lancer",
+      "text": "Ne pas poser de questions techniques",
+      "concept_tags": [
+        "architecture_web"
+      ],
+      "source_section_id": "raw_10_erreurs"
+    },
+    {
+      "id": "error_10_thinks_expert_expected",
+      "type": "error",
+      "mode": "se_lancer",
+      "text": "Croire qu’on attend un expert",
+      "concept_tags": [
+        "architecture_web"
+      ],
+      "source_section_id": "raw_10_erreurs"
+    }
+  ],
+  "pages": [
+    {
+      "id": "page_decouvrir_architecture_web",
+      "concept": "architecture_web",
+      "mode": "decouvrir",
+      "title": "Architecture d’une application web",
+      "source_section_ids": [
+        "raw_intro_stack",
+        "raw_relier_tout"
+      ],
+      "resource_ids": [
+        "res_architecture_video_modern_web_app"
+      ],
+      "item_ids": []
+    },
+    {
+      "id": "page_decouvrir_javascript",
+      "concept": "javascript",
+      "mode": "decouvrir",
+      "title": "Comprendre JavaScript moderne",
+      "source_section_ids": [
+        "raw_javascript"
+      ],
+      "resource_ids": [
+        "res_javascript_video_100_seconds",
+        "res_javascript_video_grafikart",
+        "res_javascript_reading_mdn_intro"
+      ],
+      "item_ids": []
+    },
+    {
+      "id": "page_decouvrir_typescript",
+      "concept": "typescript",
+      "mode": "decouvrir",
+      "title": "TypeScript",
+      "source_section_ids": [
+        "raw_typescript"
+      ],
+      "resource_ids": [
+        "res_typescript_video_100_seconds",
+        "res_typescript_video_intro_fr",
+        "res_typescript_reading_official_5min"
+      ],
+      "item_ids": []
+    },
+    {
+      "id": "page_decouvrir_backend",
+      "concept": "backend",
+      "mode": "decouvrir",
+      "title": "Node.js et backend",
+      "source_section_ids": [
+        "raw_node_api"
+      ],
+      "resource_ids": [
+        "res_backend_video_node_100_seconds"
+      ],
+      "item_ids": []
+    },
+    {
+      "id": "page_decouvrir_api_rest",
+      "concept": "api_rest",
+      "mode": "decouvrir",
+      "title": "API REST",
+      "source_section_ids": [
+        "raw_node_api"
+      ],
+      "resource_ids": [
+        "res_api_rest_video_explained",
+        "res_api_rest_reading_restfulapi"
+      ],
+      "item_ids": []
+    },
+    {
+      "id": "page_decouvrir_json",
+      "concept": "json",
+      "mode": "decouvrir",
+      "title": "JSON",
+      "source_section_ids": [
+        "raw_node_api",
+        "raw_definitions"
+      ],
+      "resource_ids": [],
+      "item_ids": []
+    },
+    {
+      "id": "page_decouvrir_postgresql",
+      "concept": "postgresql",
+      "mode": "decouvrir",
+      "title": "PostgreSQL",
+      "source_section_ids": [
+        "raw_postgresql"
+      ],
+      "resource_ids": [
+        "res_postgresql_video_sql_100_seconds",
+        "res_postgresql_video_intro_fr",
+        "res_postgresql_reading_sqlbolt"
+      ],
+      "item_ids": []
+    },
+    {
+      "id": "page_decouvrir_cloud",
+      "concept": "cloud",
+      "mode": "decouvrir",
+      "title": "Cloud",
+      "source_section_ids": [
+        "raw_aws",
+        "raw_definitions"
+      ],
+      "resource_ids": [],
+      "item_ids": []
+    },
+    {
+      "id": "page_decouvrir_aws",
+      "concept": "aws",
+      "mode": "decouvrir",
+      "title": "AWS",
+      "source_section_ids": [
+        "raw_aws"
+      ],
+      "resource_ids": [
+        "res_aws_video_explained",
+        "res_aws_video_100_seconds",
+        "res_aws_reading_what_is_aws"
+      ],
+      "item_ids": []
+    },
+    {
+      "id": "page_explorer_architecture_web",
+      "concept": "architecture_web",
+      "mode": "explorer",
+      "title": "Explorer l’architecture web",
+      "source_section_ids": [
+        "raw_stack_en_une_page"
+      ],
+      "resource_ids": [],
+      "item_ids": []
+    },
+    {
+      "id": "page_explorer_javascript",
+      "concept": "javascript",
+      "mode": "explorer",
+      "title": "Notions essentielles JavaScript",
+      "source_section_ids": [
+        "raw_12_notions"
+      ],
+      "resource_ids": [],
+      "item_ids": [
+        "notion_01_javascript_typescript_difference",
+        "notion_03_javascript_async_await",
+        "notion_04_javascript_modules"
+      ]
+    },
+    {
+      "id": "page_explorer_typescript",
+      "concept": "typescript",
+      "mode": "explorer",
+      "title": "Notions essentielles TypeScript",
+      "source_section_ids": [
+        "raw_12_notions"
+      ],
+      "resource_ids": [],
+      "item_ids": [
+        "notion_01_javascript_typescript_difference",
+        "notion_02_typescript_typing"
+      ]
+    },
+    {
+      "id": "page_explorer_backend",
+      "concept": "backend",
+      "mode": "explorer",
+      "title": "Explorer le backend",
+      "source_section_ids": [
+        "raw_stack_en_une_page"
+      ],
+      "resource_ids": [],
+      "item_ids": []
+    },
+    {
+      "id": "page_explorer_api_rest",
+      "concept": "api_rest",
+      "mode": "explorer",
+      "title": "Notions essentielles API REST",
+      "source_section_ids": [
+        "raw_12_notions"
+      ],
+      "resource_ids": [],
+      "item_ids": [
+        "notion_05_api_rest_definition",
+        "notion_06_api_rest_endpoint"
+      ]
+    },
+    {
+      "id": "page_explorer_json",
+      "concept": "json",
+      "mode": "explorer",
+      "title": "Notions essentielles JSON",
+      "source_section_ids": [
+        "raw_12_notions"
+      ],
+      "resource_ids": [],
+      "item_ids": [
+        "notion_07_json_definition"
+      ]
+    },
+    {
+      "id": "page_explorer_postgresql",
+      "concept": "postgresql",
+      "mode": "explorer",
+      "title": "Notions essentielles PostgreSQL",
+      "source_section_ids": [
+        "raw_12_notions"
+      ],
+      "resource_ids": [],
+      "item_ids": [
+        "notion_08_postgresql_table",
+        "notion_09_postgresql_relation",
+        "notion_10_postgresql_sql_query"
+      ]
+    },
+    {
+      "id": "page_explorer_cloud",
+      "concept": "cloud",
+      "mode": "explorer",
+      "title": "Notions essentielles Cloud",
+      "source_section_ids": [
+        "raw_12_notions"
+      ],
+      "resource_ids": [],
+      "item_ids": [
+        "notion_11_cloud_why"
+      ]
+    },
+    {
+      "id": "page_explorer_aws",
+      "concept": "aws",
+      "mode": "explorer",
+      "title": "Notions essentielles AWS",
+      "source_section_ids": [
+        "raw_12_notions"
+      ],
+      "resource_ids": [],
+      "item_ids": [
+        "notion_12_aws_role"
+      ]
+    },
+    {
+      "id": "page_se_lancer_architecture_web",
+      "concept": "architecture_web",
+      "mode": "se_lancer",
+      "title": "Se lancer : vue globale",
+      "source_section_ids": [
+        "raw_20_questions",
+        "raw_10_erreurs",
+        "raw_conseils_strategiques"
+      ],
+      "resource_ids": [],
+      "item_ids": [
+        "question_20_what_is_deployment",
+        "error_01_frontend_backend_confusion",
+        "error_02_api_database_confusion",
+        "error_05_claims_can_code_without_example",
+        "error_06_does_not_understand_errors",
+        "error_07_copies_ai_code_without_understanding",
+        "error_08_ignores_project_structure",
+        "error_09_does_not_ask_technical_questions",
+        "error_10_thinks_expert_expected"
+      ]
+    },
+    {
+      "id": "page_se_lancer_javascript",
+      "concept": "javascript",
+      "mode": "se_lancer",
+      "title": "Questions et erreurs JavaScript",
+      "source_section_ids": [
+        "raw_20_questions",
+        "raw_10_erreurs"
+      ],
+      "resource_ids": [],
+      "item_ids": [
+        "question_01_javascript_vs_typescript",
+        "question_04_async_await",
+        "question_05_let_const_var",
+        "error_03_typescript_replaces_javascript"
+      ]
+    },
+    {
+      "id": "page_se_lancer_typescript",
+      "concept": "typescript",
+      "mode": "se_lancer",
+      "title": "Questions et erreurs TypeScript",
+      "source_section_ids": [
+        "raw_20_questions",
+        "raw_10_erreurs"
+      ],
+      "resource_ids": [],
+      "item_ids": [
+        "question_01_javascript_vs_typescript",
+        "question_02_why_typescript",
+        "question_03_type_or_interface",
+        "error_03_typescript_replaces_javascript"
+      ]
+    },
+    {
+      "id": "page_se_lancer_backend",
+      "concept": "backend",
+      "mode": "se_lancer",
+      "title": "Questions et erreurs Backend",
+      "source_section_ids": [
+        "raw_20_questions",
+        "raw_10_erreurs"
+      ],
+      "resource_ids": [],
+      "item_ids": [
+        "question_10_what_is_backend",
+        "question_19_what_is_server",
+        "error_01_frontend_backend_confusion"
+      ]
+    },
+    {
+      "id": "page_se_lancer_api_rest",
+      "concept": "api_rest",
+      "mode": "se_lancer",
+      "title": "Questions et erreurs API REST",
+      "source_section_ids": [
+        "raw_20_questions",
+        "raw_10_erreurs"
+      ],
+      "resource_ids": [],
+      "item_ids": [
+        "question_06_what_is_api_rest",
+        "question_07_what_is_endpoint",
+        "question_08_get_vs_post",
+        "question_09_json_role",
+        "error_02_api_database_confusion",
+        "error_04_does_not_understand_http"
+      ]
+    },
+    {
+      "id": "page_se_lancer_json",
+      "concept": "json",
+      "mode": "se_lancer",
+      "title": "Questions JSON",
+      "source_section_ids": [
+        "raw_20_questions"
+      ],
+      "resource_ids": [],
+      "item_ids": [
+        "question_09_json_role"
+      ]
+    },
+    {
+      "id": "page_se_lancer_postgresql",
+      "concept": "postgresql",
+      "mode": "se_lancer",
+      "title": "Questions PostgreSQL",
+      "source_section_ids": [
+        "raw_20_questions",
+        "raw_10_erreurs"
+      ],
+      "resource_ids": [],
+      "item_ids": [
+        "question_11_what_is_table",
+        "question_12_primary_key",
+        "question_13_why_index",
+        "question_14_what_is_sql",
+        "question_15_why_postgresql",
+        "question_18_storage_vs_database",
+        "error_02_api_database_confusion"
+      ]
+    },
+    {
+      "id": "page_se_lancer_cloud",
+      "concept": "cloud",
+      "mode": "se_lancer",
+      "title": "Questions Cloud",
+      "source_section_ids": [
+        "raw_20_questions"
+      ],
+      "resource_ids": [],
+      "item_ids": [
+        "question_16_why_cloud",
+        "question_18_storage_vs_database",
+        "question_19_what_is_server",
+        "question_20_what_is_deployment"
+      ]
+    },
+    {
+      "id": "page_se_lancer_aws",
+      "concept": "aws",
+      "mode": "se_lancer",
+      "title": "Questions AWS",
+      "source_section_ids": [
+        "raw_20_questions"
+      ],
+      "resource_ids": [],
+      "item_ids": [
+        "question_17_what_is_aws_for",
+        "question_20_what_is_deployment"
+      ]
+    }
+  ],
+  "claude_contract": {
+    "must_use_this_json_as_authoritative_structure": true,
+    "markdown_supplies_raw_text_only": true,
+    "must_not_create_or_remove_objects": true,
+    "must_not_change_ids": true,
+    "must_not_change_urls": true,
+    "must_fill_page_content_from_source_sections": true,
+    "must_keep_item_text_exact_for_questions_errors_notions": true
+  }
+}
