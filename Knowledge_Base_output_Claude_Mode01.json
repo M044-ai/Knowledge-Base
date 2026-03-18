@@ -1,0 +1,362 @@
+{
+  "schema_version": "1.0",
+  "role": "source_of_truth_for_claude",
+  "rules": {
+    "markdown_is_archive_only": true,
+    "json_is_structuring_input": true,
+    "no_new_concepts": true,
+    "no_new_urls": true,
+    "no_implicit_tag_inference": true,
+    "global_tag_only": "architecture_web"
+  },
+  "concepts": [
+    {
+      "id": "architecture_web",
+      "label": "Architecture d'une application web",
+      "parent_id": null,
+      "children_ids": [
+        "javascript",
+        "typescript",
+        "backend",
+        "api_rest",
+        "json",
+        "postgresql",
+        "cloud",
+        "aws"
+      ]
+    },
+    {
+      "id": "javascript",
+      "label": "JavaScript",
+      "parent_id": "architecture_web",
+      "children_ids": [
+        "typescript"
+      ]
+    },
+    {
+      "id": "typescript",
+      "label": "TypeScript",
+      "parent_id": "javascript",
+      "children_ids": []
+    },
+    {
+      "id": "backend",
+      "label": "Backend",
+      "parent_id": "architecture_web",
+      "children_ids": [
+        "api_rest",
+        "postgresql"
+      ]
+    },
+    {
+      "id": "api_rest",
+      "label": "API REST",
+      "parent_id": "backend",
+      "children_ids": [
+        "json"
+      ]
+    },
+    {
+      "id": "json",
+      "label": "JSON",
+      "parent_id": "api_rest",
+      "children_ids": []
+    },
+    {
+      "id": "postgresql",
+      "label": "PostgreSQL",
+      "parent_id": "backend",
+      "children_ids": []
+    },
+    {
+      "id": "cloud",
+      "label": "Cloud",
+      "parent_id": "architecture_web",
+      "children_ids": [
+        "aws"
+      ]
+    },
+    {
+      "id": "aws",
+      "label": "AWS",
+      "parent_id": "cloud",
+      "children_ids": []
+    }
+  ],
+  "modes": [
+    { "id": "decouvrir", "label": "Découvrir" },
+    { "id": "explorer", "label": "Explorer" },
+    { "id": "se_lancer", "label": "Se lancer" }
+  ],
+  "resource_types": ["video", "reading"],
+  "item_types": ["notion", "question", "error", "activity", "resource"],
+  "source_sections": [
+    { "id": "raw_intro_stack", "title": "Introduction : Vision globale de la stack demandée" },
+    { "id": "raw_javascript", "title": "1 Comprendre JavaScript moderne" },
+    { "id": "raw_typescript", "title": "2 TypeScript" },
+    { "id": "raw_node_api", "title": "3 Node.js et API" },
+    { "id": "raw_postgresql", "title": "4 PostgreSQL" },
+    { "id": "raw_aws", "title": "5 AWS" },
+    { "id": "raw_relier_tout", "title": "6 Relier tout" },
+    { "id": "raw_exercice_application", "title": "7 Mini projet" },
+    { "id": "raw_definitions", "title": "Définitions principales" }
+  ],
+  "resources": [
+    {
+      "id": "res_architecture_video_modern_web_app",
+      "type": "video",
+      "title": "Comment fonctionne une application web moderne",
+      "url": "https://www.youtube.com/watch?v=QX4nR7ZB5w8",
+      "concept_tags": ["architecture_web"],
+      "source_section_id": "raw_relier_tout"
+    },
+    {
+      "id": "res_javascript_video_100_seconds",
+      "type": "video",
+      "title": "JavaScript en 100 secondes",
+      "url": "https://www.youtube.com/watch?v=DHjqpvDnNGE",
+      "concept_tags": ["javascript"],
+      "source_section_id": "raw_javascript"
+    },
+    {
+      "id": "res_javascript_video_grafikart",
+      "type": "video",
+      "title": "JavaScript pour débutants – Grafikart (FR)",
+      "url": "https://www.youtube.com/watch?v=ItYyeQj0wIM",
+      "concept_tags": ["javascript"],
+      "source_section_id": "raw_javascript"
+    },
+    {
+      "id": "res_javascript_reading_mdn_intro",
+      "type": "reading",
+      "title": "MDN introduction JavaScript",
+      "url": "https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Introduction",
+      "concept_tags": ["javascript"],
+      "source_section_id": "raw_javascript"
+    },
+    {
+      "id": "res_typescript_video_100_seconds",
+      "type": "video",
+      "title": "TypeScript en 100 secondes",
+      "url": "https://www.youtube.com/watch?v=zQnBQ4tB3ZA",
+      "concept_tags": ["typescript"],
+      "source_section_id": "raw_typescript"
+    },
+    {
+      "id": "res_typescript_video_intro_fr",
+      "type": "video",
+      "title": "Introduction TypeScript (FR)",
+      "url": "https://www.youtube.com/watch?v=X8F0hU7FJx4",
+      "concept_tags": ["typescript"],
+      "source_section_id": "raw_typescript"
+    },
+    {
+      "id": "res_typescript_reading_official_5min",
+      "type": "reading",
+      "title": "TypeScript in 5 minutes",
+      "url": "https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html",
+      "concept_tags": ["typescript"],
+      "source_section_id": "raw_typescript"
+    },
+    {
+      "id": "res_api_rest_video_explained",
+      "type": "video",
+      "title": "REST API expliquée simplement",
+      "url": "https://www.youtube.com/watch?v=-MTSQjw5DrM",
+      "concept_tags": ["api_rest"],
+      "source_section_id": "raw_node_api"
+    },
+    {
+      "id": "res_backend_video_node_100_seconds",
+      "type": "video",
+      "title": "Node.js expliqué en 100 secondes",
+      "url": "https://www.youtube.com/watch?v=TlB_eWDSMt4",
+      "concept_tags": ["backend"],
+      "source_section_id": "raw_node_api"
+    },
+    {
+      "id": "res_api_rest_reading_restfulapi",
+      "type": "reading",
+      "title": "Introduction REST API",
+      "url": "https://restfulapi.net/",
+      "concept_tags": ["api_rest"],
+      "source_section_id": "raw_node_api"
+    },
+    {
+      "id": "res_postgresql_video_sql_100_seconds",
+      "type": "video",
+      "title": "SQL en 100 secondes",
+      "url": "https://www.youtube.com/watch?v=zsjvFFKOm3c",
+      "concept_tags": ["postgresql"],
+      "source_section_id": "raw_postgresql"
+    },
+    {
+      "id": "res_postgresql_video_intro_fr",
+      "type": "video",
+      "title": "PostgreSQL introduction (FR)",
+      "url": "https://www.youtube.com/watch?v=qw--VYLpxG4",
+      "concept_tags": ["postgresql"],
+      "source_section_id": "raw_postgresql"
+    },
+    {
+      "id": "res_postgresql_reading_sqlbolt",
+      "type": "reading",
+      "title": "Introduction SQL",
+      "url": "https://sqlbolt.com/fr/",
+      "concept_tags": ["postgresql"],
+      "source_section_id": "raw_postgresql"
+    },
+    {
+      "id": "res_aws_video_explained",
+      "type": "video",
+      "title": "AWS expliqué simplement",
+      "url": "https://www.youtube.com/watch?v=mxT233EdY5c",
+      "concept_tags": ["aws"],
+      "source_section_id": "raw_aws"
+    },
+    {
+      "id": "res_aws_video_100_seconds",
+      "type": "video",
+      "title": "AWS en 100 secondes",
+      "url": "https://www.youtube.com/watch?v=H4AwR_xY-Kw",
+      "concept_tags": ["aws"],
+      "source_section_id": "raw_aws"
+    },
+    {
+      "id": "res_aws_reading_what_is_aws",
+      "type": "reading",
+      "title": "Présentation AWS",
+      "url": "https://aws.amazon.com/fr/what-is-aws/",
+      "concept_tags": ["aws"],
+      "source_section_id": "raw_aws"
+    },
+    {
+      "id": "res_activity_video_create_api_node_postgres",
+      "type": "video",
+      "title": "Créer une API Node + PostgreSQL",
+      "url": "https://www.youtube.com/watch?v=ldYcgPKEZC8",
+      "concept_tags": ["backend", "api_rest", "postgresql"],
+      "source_section_id": "raw_exercice_application"
+    }
+  ],
+  "pages": [
+    {
+      "id": "page_decouvrir_architecture_web",
+      "concept": "architecture_web",
+      "mode": "decouvrir",
+      "title": "Architecture d'une application web",
+      "source_section_ids": ["raw_intro_stack", "raw_relier_tout"],
+      "resource_ids": ["res_architecture_video_modern_web_app"],
+      "item_ids": [],
+      "content": "Une application web moderne repose sur une architecture en couches où chaque élément joue un rôle précis. L'employeur décrit une stack très classique que l'on retrouve dans de nombreux projets professionnels.\n\nLa chaîne se lit de haut en bas :\n\n- Le **frontend** est l'interface utilisée par l'utilisateur dans son navigateur ou son application. Les technologies fréquentes sont React, Vue ou Angular.\n- L'**API backend** (Node.js + TypeScript) est le programme intermédiaire qui gère la logique métier. C'est lui qui reçoit les requêtes du frontend, les traite et communique avec la base de données.\n- La **base de données** (PostgreSQL) stocke les données structurées de l'application : utilisateurs, commandes, produits, etc.\n- L'**infrastructure cloud** (AWS) est l'environnement d'hébergement qui fait tourner l'ensemble de ces composants sans nécessiter de gestion directe de serveurs physiques.\n\nComprendre cette chaîne complète — du navigateur jusqu'à l'infrastructure — est la compétence la plus importante pour appréhender une application web moderne. L'objectif n'est pas de maîtriser chaque technologie en détail, mais de comprendre comment chaque brique s'articule avec les autres et pourquoi elle est présente dans la stack."
+    },
+    {
+      "id": "page_decouvrir_javascript",
+      "concept": "javascript",
+      "mode": "decouvrir",
+      "title": "Comprendre JavaScript moderne",
+      "source_section_ids": ["raw_javascript"],
+      "resource_ids": [
+        "res_javascript_video_100_seconds",
+        "res_javascript_video_grafikart",
+        "res_javascript_reading_mdn_intro"
+      ],
+      "item_ids": [],
+      "content": "JavaScript est la base indispensable pour comprendre TypeScript et, plus largement, le développement web moderne. C'est le langage qui s'exécute dans le navigateur et qui est également utilisé côté serveur avec Node.js.\n\nPour appréhender JavaScript dans le contexte d'une stack professionnelle, plusieurs notions fondamentales sont à connaître :\n\n- Les **variables** permettent de stocker et de manipuler des données.\n- Les **fonctions** encapsulent de la logique réutilisable.\n- Les **objets** organisent les données en structures nommées.\n- **async / await** permet d'écrire du code asynchrone de façon lisible, notamment pour les appels à une API ou à une base de données.\n- Les **modules** permettent de découper le code en fichiers séparés et de les importer selon les besoins.\n\nL'objectif à ce stade est de pouvoir lire un fichier JavaScript sans être perdu : reconnaître la structure du code, comprendre ce que fait une fonction, identifier un appel asynchrone."
+    },
+    {
+      "id": "page_decouvrir_typescript",
+      "concept": "typescript",
+      "mode": "decouvrir",
+      "title": "TypeScript",
+      "source_section_ids": ["raw_typescript"],
+      "resource_ids": [
+        "res_typescript_video_100_seconds",
+        "res_typescript_video_intro_fr",
+        "res_typescript_reading_official_5min"
+      ],
+      "item_ids": [],
+      "content": "TypeScript est une extension de JavaScript qui ajoute un système de **typage statique**. Le code TypeScript est compilé en JavaScript avant d'être exécuté : il n'y a pas de rupture avec JavaScript, mais une couche supplémentaire de rigueur.\n\nLe concept clé est le **typage**. Voici un exemple simple :\n\n```\ntype User = {\n  id: number\n  name: string\n}\n```\n\nCela signifie qu'un objet de type `User` doit obligatoirement avoir un champ `id` de type nombre et un champ `name` de type chaîne de caractères. Si le code tente de passer un mauvais type, une erreur est détectée avant même l'exécution.\n\nPourquoi TypeScript est important dans une stack professionnelle :\n\n- Il permet d'**éviter des erreurs** courantes liées à des données mal formées.\n- Il **documente les structures de données** directement dans le code, ce qui facilite la collaboration en équipe.\n\nLes notions à comprendre pour lire du TypeScript : les **types**, les **interfaces**, les **classes** et le processus de **compilation**. L'objectif est de pouvoir lire du code TypeScript et d'en comprendre les types, sans nécessairement savoir l'écrire de zéro."
+    },
+    {
+      "id": "page_decouvrir_backend",
+      "concept": "backend",
+      "mode": "decouvrir",
+      "title": "Node.js et backend",
+      "source_section_ids": ["raw_node_api"],
+      "resource_ids": ["res_backend_video_node_100_seconds"],
+      "item_ids": [],
+      "content": "Le backend est la partie serveur d'une application web. Il est responsable de la **logique métier** : il reçoit les requêtes des clients (frontend, applications mobiles), les traite et communique avec la base de données.\n\nDans la stack décrite, le backend est construit avec **Node.js** et **TypeScript**. Node.js est un environnement d'exécution qui permet d'utiliser JavaScript côté serveur, en dehors du navigateur.\n\nLe rôle du backend dans la chaîne est central :\n\n```\nclient → API (backend) → base de données\n```\n\nC'est le backend qui décide quelles données sont accessibles, qui peut y accéder, et comment elles doivent être transformées avant d'être renvoyées au client. L'objectif est de comprendre ce que fait un backend dans une application : son rôle d'intermédiaire entre l'interface utilisateur et les données stockées."
+    },
+    {
+      "id": "page_decouvrir_api_rest",
+      "concept": "api_rest",
+      "mode": "decouvrir",
+      "title": "API REST",
+      "source_section_ids": ["raw_node_api"],
+      "resource_ids": [
+        "res_api_rest_video_explained",
+        "res_api_rest_reading_restfulapi"
+      ],
+      "item_ids": [],
+      "content": "Une API REST est une interface qui permet à des applications de communiquer entre elles via des **requêtes HTTP**. Elle expose des **endpoints** — des URLs spécifiques — qui permettent de lire ou de modifier des données.\n\nExemples d'endpoints typiques dans une application :\n\n```\nGET /users       → récupérer la liste des utilisateurs\nPOST /orders     → créer une nouvelle commande\n```\n\nChaque endpoint correspond à une action précise. Les méthodes HTTP les plus courantes sont :\n\n- `GET` : lire des données\n- `POST` : créer une ressource\n- `PUT` : modifier une ressource\n- `DELETE` : supprimer une ressource\n\nLes données échangées entre le client et l'API sont généralement formatées en **JSON**. Comprendre une API REST, c'est comprendre comment une application frontend parle avec un backend : elle envoie des requêtes HTTP vers des endpoints précis, et le backend renvoie des données structurées en réponse."
+    },
+    {
+      "id": "page_decouvrir_json",
+      "concept": "json",
+      "mode": "decouvrir",
+      "title": "JSON",
+      "source_section_ids": ["raw_node_api", "raw_definitions"],
+      "resource_ids": [],
+      "item_ids": [],
+      "content": "JSON (JavaScript Object Notation) est un **format de données simple** utilisé pour échanger des informations entre un client et un serveur. C'est le format standard des échanges dans une API REST.\n\nLorsqu'un frontend envoie une requête à une API backend ou reçoit une réponse, les données sont structurées en JSON. Ce format est lisible par les humains et facile à traiter par les machines.\n\nVoici un exemple de réponse JSON retournée par un endpoint `GET /users` :\n\n```\n[\n  { \"id\": 1, \"name\": \"Alice\" },\n  { \"id\": 2, \"name\": \"Bob\" }\n]\n```\n\nJSON est au cœur du fonctionnement d'une API REST : il constitue le langage commun entre le frontend et le backend pour transmettre des données structurées."
+    },
+    {
+      "id": "page_decouvrir_postgresql",
+      "concept": "postgresql",
+      "mode": "decouvrir",
+      "title": "PostgreSQL",
+      "source_section_ids": ["raw_postgresql"],
+      "resource_ids": [
+        "res_postgresql_video_sql_100_seconds",
+        "res_postgresql_video_intro_fr",
+        "res_postgresql_reading_sqlbolt"
+      ],
+      "item_ids": [],
+      "content": "PostgreSQL est une **base de données relationnelle** très utilisée dans les applications web et SaaS. Elle permet de stocker des données structurées et d'effectuer des requêtes SQL pour les lire ou les modifier.\n\nLes concepts fondamentaux à comprendre sont :\n\n- Une **table** organise les données en lignes et colonnes (par exemple une table `users` avec les colonnes `id` et `name`).\n- Une **row** (ligne) représente un enregistrement individuel.\n- Une **column** (colonne) représente un attribut des enregistrements.\n- La **primary key** (clé primaire) est un identifiant unique pour chaque ligne d'une table.\n- La **foreign key** (clé étrangère) crée une relation entre deux tables.\n\nExemple de requête SQL simple :\n\n```\nSELECT * FROM users;\n```\n\nCette requête retourne toutes les lignes de la table `users`. L'objectif est de comprendre comment une API lit et écrit dans une base de données : le backend envoie des requêtes SQL à PostgreSQL, qui retourne ou modifie les données correspondantes."
+    },
+    {
+      "id": "page_decouvrir_cloud",
+      "concept": "cloud",
+      "mode": "decouvrir",
+      "title": "Cloud",
+      "source_section_ids": ["raw_aws", "raw_definitions"],
+      "resource_ids": [],
+      "item_ids": [],
+      "content": "Le cloud désigne une infrastructure informatique hébergée à distance, accessible via Internet. Il permet d'**héberger des applications, des bases de données et des services** sans gérer directement des serveurs physiques.\n\nPlutôt que d'acheter et de maintenir ses propres machines, une entreprise loue des ressources auprès d'un fournisseur cloud. Ces ressources sont disponibles à la demande, facturées à l'usage, et peuvent être dimensionnées selon les besoins.\n\nDans le contexte d'une application web, le cloud est l'environnement qui fait tourner l'ensemble de la stack : le serveur backend, la base de données, le stockage de fichiers, et d'autres services selon les besoins du projet. AWS (Amazon Web Services) est l'un des principaux fournisseurs de cloud à l'échelle mondiale."
+    },
+    {
+      "id": "page_decouvrir_aws",
+      "concept": "aws",
+      "mode": "decouvrir",
+      "title": "AWS",
+      "source_section_ids": ["raw_aws"],
+      "resource_ids": [
+        "res_aws_video_explained",
+        "res_aws_video_100_seconds",
+        "res_aws_reading_what_is_aws"
+      ],
+      "item_ids": [],
+      "content": "AWS (Amazon Web Services) est une plateforme cloud qui fournit des services d'infrastructure pour héberger des applications, des bases de données, du stockage et d'autres composants sans gérer directement des serveurs physiques.\n\nDans une stack web classique, plusieurs services AWS sont fréquemment utilisés :\n\n- **EC2** : serveurs virtuels sur lesquels tourne le backend de l'application.\n- **S3** : stockage de fichiers (images, documents, assets statiques).\n- **RDS** : service de base de données managé, souvent utilisé pour héberger PostgreSQL.\n- **Lambda** : fonctions serverless exécutées à la demande, sans gérer de serveur dédié.\n\nComprendre AWS dans ce contexte, c'est comprendre **où tourne l'application** : chaque composant de la stack (API, base de données, stockage) correspond à un ou plusieurs services AWS. L'objectif est de pouvoir expliquer comment une application est déployée et sur quelle infrastructure elle s'appuie."
+    }
+  ],
+  "claude_contract": {
+    "must_use_this_json_as_authoritative_structure": true,
+    "markdown_supplies_raw_text_only": true,
+    "must_not_create_or_remove_objects": true,
+    "must_not_change_ids": true,
+    "must_not_change_urls": true,
+    "must_fill_page_content_from_source_sections": true,
+    "must_keep_item_text_exact_for_questions_errors_notions": true
+  }
+}
